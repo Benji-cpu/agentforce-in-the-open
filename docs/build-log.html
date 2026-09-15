@@ -479,7 +479,7 @@
         <span class="n">01</span>
         <span class="what">A working agent in a Developer Edition org, reproducible from source in a
           public repo</span>
-        <span class="chip now">org blocked</span>
+        <span class="chip now">scaffold in repo</span>
       </div>
       <div class="done-row">
         <span class="n">02</span>
@@ -517,7 +517,7 @@
   </section>
 
   <section>
-    <h2>The log <span class="count">1 entry</span></h2>
+    <h2>The log <span class="count">2 entries</span></h2>
     <div class="entries">
 
       <article class="entry">
@@ -616,6 +616,108 @@ title: Developer Edition with Agentforce and Data 360 | Salesforce
         </div>
       </article>
 
+      <article class="entry">
+        <div class="entry-rail">
+          <span class="sess">02</span>
+          <span class="date">15 Sep 2026</span>
+        </div>
+        <div class="entry-body">
+          <h3>Agentforce was switched off in an Agentforce org</h3>
+
+          <div class="field">
+            <p class="label">Set out to do</p>
+            <div class="value">
+              <p>Get the org authorised to the CLI, and get something that is genuinely agent
+                source — not a screenshot of a builder — into the repo.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <p class="label">What happened</p>
+            <div class="value">
+              <p>The captcha took a human about ninety seconds, as advertised. Then four things in
+                a row, none of them the thing any quick start warns you about.</p>
+              <p><strong>The CLI installs on Node 20 and then dies on it.</strong> Its bundled
+                undici calls <code>webidl.util.markAsUncloneable</code>, which arrived in Node 22.
+                npm said nothing at install time. There is now a three-line <code>./sf</code>
+                wrapper in the repo that puts a keg-only node@22 on PATH for that command and
+                leaves the machine default where the other projects need it.</p>
+              <p><strong><code>sf org login device</code> does not exist in v2</strong> — that was
+                sfdx — and <code>SF_CONTAINER_MODE</code> refuses the web flow outright rather than
+                printing a URL. So: the web flow, with the auth URL handed to the browser that
+                already held the session.</p>
+              <p>Then the real one, below. After it: four topics drafted by the org's own model, an
+                Agent Script authoring bundle written into <code>force-app/</code>, and a clean
+                compile. The blueprint is a file you can read, diff and deploy, which is the whole
+                reason for doing it this way.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <p class="label">The number</p>
+            <div class="value">
+              <p class="figure-number">3 of 4<span>business subagents in the generated bundle carry
+                the same boilerplate instruction — &ldquo;help the user track their order&rdquo; —
+                including the one about returns and the one about calibration certificates. It
+                compiled with 0 errors in 2.56s.</span></p>
+            </div>
+          </div>
+
+          <div class="field broke">
+            <p class="label">What broke</p>
+            <div class="value">
+              <p><strong>Agentforce was off in a Developer Edition org signed up specifically for
+                Agentforce.</strong> The CLI's error was
+                <code>This feature is not currently enabled for this user type or org:
+                [AgentforceAiAssist]</code>, which does not say where to go.</p>
+              <p>Three places looked like the answer and were not. Einstein Setup says
+                <em>&ldquo;Turn on Einstein: On&rdquo;</em> and means something else.
+                <code>sf org list metadata-types</code> returns <code>GenAiPlannerBundle</code>,
+                <code>GenAiPlugin</code>, <code>GenAiFunction</code> — all present, which reads like
+                the feature is live. And <code>BotDefinition</code> is not a queryable object, which
+                looks like a permissions problem.</p>
+              <p>It is one toggle at Setup &rarr; Einstein &rarr; Agentforce Studio &rarr;
+                Agentforce Agents, reading Off. The part worth keeping: <strong>that switch has no
+                metadata representation.</strong> It cannot be deployed, committed, or included in a
+                handover repo. Anyone shipping an agent to a client has a click in their runbook
+                whether they like it or not, and it had better be written down.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <p class="label">Capture</p>
+            <div class="value">
+              <figure>
+<pre><span class="cmd">$ ./sf agent generate agent-spec --type customer ...</span>
+<span class="miss">Error (1): This feature is not currently enabled for this
+user type or org: [AgentforceAiAssist]</span>
+
+<span class="cmd">... one toggle later ...</span>
+
+Creating agent spec... done
+Saved agent spec: specs/northaven-agent-spec.yaml
+</pre>
+                <figcaption>docs/capture/13-agent-spec.txt and 14-agentforce-toggle.txt — the
+                  second of which lists the three places that looked like the answer.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="field">
+            <p class="label">Next</p>
+            <div class="value">
+              <p>Replace the boilerplate with instructions that describe the four jobs the agent
+                actually has, build the one action that does something real — look up an order —
+                and load the synthetic Northaven dataset behind it. Then publish, preview, and put
+                twenty questions to it.</p>
+              <p>Northaven Instruments is invented: a small British lab-supplies shop that does not
+                exist. Everything it appears to know will be made up by me, and said so here every
+                time it comes up.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -647,7 +749,7 @@ title: Developer Edition with Agentforce and Data 360 | Salesforce
   </section>
 
   <footer>
-    <p>Agentforce in the Open &middot; build log &middot; entry 01 of an unfinished thing</p>
+    <p>Agentforce in the Open &middot; build log &middot; 2 entries into an unfinished thing</p>
     <p>Last updated 15 September 2026 &middot; <a href="https://github.com/Benji-cpu/agentforce-in-the-open">the repo</a></p>
   </footer>
 
