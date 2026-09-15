@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "9f0451d9-f48d-405f-a97e-e7005e5bb0fe",
+   "metrics": {},
+   "feedbackId": "93b6cf9e-3a67-462b-8662-d530003c7e30",
+   "planId": "93b6cf9e-3a67-462b-8662-d530003c7e30",
+   "isContentSafe": true,
+   "message": "Order NI-2048 was placed on 12/09/2026 for 2 crucible tongs and 20 porcelain crucibles (30ml). Its status is Processing. The order is being picked in Sheffield and should be dispatched within two working days. Expected delivery is 19/09/2026.\n\nIs there anything else I can help with on this order?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "a874fa6d-bce1-4907-815e-98de1bc914c2"
+}

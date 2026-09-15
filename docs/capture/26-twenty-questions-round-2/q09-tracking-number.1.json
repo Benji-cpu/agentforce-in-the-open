@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "a0475002-8e21-4815-a76c-efc40c928de3",
+   "metrics": {},
+   "feedbackId": "c05e220a-5101-4837-9c86-b621e0174e69",
+   "planId": "c05e220a-5101-4837-9c86-b621e0174e69",
+   "isContentSafe": true,
+   "message": "Your order NI-2051 was dispatched by DPD. The tracking number is 15507777888899. For the live status, enter that number on DPD's tracking page. The expected delivery date is 16/09/2026.\n\nIs there anything else I can help with?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "62feb0bf-2468-4136-8b37-68a109a0d043"
+}

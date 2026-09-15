@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "504cbd9c-b773-4481-8a12-6ba2ee7263b8",
+   "metrics": {},
+   "feedbackId": "3ab0f794-c934-4cc2-9fb2-0ff1e88d14c7",
+   "planId": "3ab0f794-c934-4cc2-9fb2-0ff1e88d14c7",
+   "isContentSafe": true,
+   "message": "Your digital thermometer is covered for damage on arrival. Northaven will replace or refund it and cover return postage. Please take a photo of the cracked display before packing it. To start the return, email returns@northaven-instruments.example with your order reference and a brief description of the damage. You'll get a returns number and label within one working day.\n\nIs there anything else I can help you with?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "7a5e6f7a-2dd4-434c-92be-1713e3efc32a"
+}

@@ -1,0 +1,19 @@
+# Session 3 starting state — 2026-09-15T06:59:40Z
+# What the org holds before any Northaven data or code goes in.
+Account  13
+Contact  20
+Order    0
+Case     26
+
+$ ./sf data query -q "SELECT Id, Title FROM Knowledge__kav LIMIT 3"
+Querying Data... done
+[1m[31mError (1):[39m[22m 
+SELECT Id, Title FROM Knowledge__kav LIMIT 3
+                      ^
+
+$ ./sf data query -q "SELECT Id FROM User WHERE Profile.Name = 'Einstein Agent User'"
+Total number of records retrieved: 0.
+
+# Knowledge (Knowledge__kav) is NOT enabled in this org — the sObject does not exist.
+# There is no Einstein Agent User yet; the generated bundle says default_agent_user: "NEW AGENT USER".
+# The 13 accounts and 20 contacts are Salesforce's stock sample data (Edge Communications, GenePoint...).

@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "b7950971-8d19-483d-8ef8-49d0468b56db",
+   "metrics": {},
+   "feedbackId": "e4af1a28-1c8e-4eda-82f1-557413785c30",
+   "planId": "e4af1a28-1c8e-4eda-82f1-557413785c30",
+   "isContentSafe": true,
+   "message": "Your order NI-2046 was dispatched by Royal Mail and is due for delivery today, 15/09/2026. You can track it live using the number RM1122334455GB on Royal Mail’s tracking page at URL_Redacted.\n\nIf it does not arrive by the end of today, I can hand this to a person to chase it up with Royal Mail for you. Would you like me to do that now, or would you prefer to wait until tomorrow?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "4a8a3dfe-b591-402e-8458-9ad6e8bbf001"
+}

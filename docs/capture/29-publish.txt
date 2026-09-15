@@ -1,0 +1,29 @@
+$ ./sf agent publish authoring-bundle --api-name Northaven_Support   # 2026-09-15, after round 3
+
+ Elapsed Time: 44.91s
+Deployed 3 metadata component(s)
+ ✔ Deploy Metadata 6.59s
+ Elapsed Time: 44.94s
+✓ Agent 'Northaven_Support' published successfully
+--- exit 0 ---
+
+# What publish put back into force-app (retrieved compiled metadata):
+?? force-app/main/default/bots/
+?? force-app/main/default/classes/
+?? force-app/main/default/genAiPlannerBundles/
+?? force-app/main/default/objects/
+?? force-app/main/default/permissionsets/
+
+$ ./sf data query -q "SELECT DeveloperName, Type, IsDeleted FROM BotDefinition"
+│ DEVELOPERNAME     │ TYPE            │
+├───────────────────┼─────────────────┤
+│ Northaven_Support │ ExternalCopilot │
+└───────────────────┴─────────────────┘
+
+[1mTotal number of records retrieved: 1.[22m
+$ ./sf data query -q "SELECT VersionNumber, Status FROM BotVersion WHERE BotDefinition.DeveloperName = 'Northaven_Support'"
+├───────────────┼──────────┤
+│ 1             │ Inactive │
+└───────────────┴──────────┘
+
+[1mTotal number of records retrieved: 1.[22m

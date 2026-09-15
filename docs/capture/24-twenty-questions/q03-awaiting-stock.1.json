@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "a7fb3bc2-3a2c-475a-8908-a61166462a08",
+   "metrics": {},
+   "feedbackId": "f9fcb6a2-b5f6-4780-b8ab-9abfed352fc2",
+   "planId": "f9fcb6a2-b5f6-4780-b8ab-9abfed352fc2",
+   "isContentSafe": true,
+   "message": "Order NI-2044 is awaiting stock—one or more items are on back-order. The warehouse will email you as soon as it ships. If you need a date or want to discuss your options, I can hand you over to a person. Would you like that?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "0de2afb0-e5d2-416a-826f-6989118167c5"
+}

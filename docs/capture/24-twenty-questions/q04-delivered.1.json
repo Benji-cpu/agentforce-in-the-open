@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "0ae48af7-5cb3-4e80-bdeb-055df2709303",
+   "metrics": {},
+   "feedbackId": "1dfc5080-7368-4be6-b1d1-a5073c39556b",
+   "planId": "1dfc5080-7368-4be6-b1d1-a5073c39556b",
+   "isContentSafe": true,
+   "message": "Order NI-2043, placed 02/09/2026 for 50 x sample bottles 1L and 2 x turbidity standards, shows as Delivered. If you have not received it, I can hand you over to a person to help. Would you like that?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "f4a8d488-305d-488b-a593-c9f43e1395bb"
+}

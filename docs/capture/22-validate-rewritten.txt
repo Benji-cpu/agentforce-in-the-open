@@ -1,0 +1,10 @@
+# The rewritten Agent Script — 397 lines, four business subagents with their own instructions,
+# one apex:// action defined in three of them. Before: docs/capture/20-agent-script-before.agent
+
+$ ./sf agent validate authoring-bundle --api-name Northaven_Support
+ Elapsed Time: 3.32s
+   ▸ Status: COMPLETED
+   ▸ Errors: 0
+ Elapsed Time: 3.35s
+
+# Same verdict as the boilerplate got. Whether it WORKS is what the preview is for.

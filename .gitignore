@@ -7,3 +7,6 @@
 .sfdx/
 deploy-options.json
 node_modules/
+
+# scratch for CLI probes and preview runs
+.sf-tmp/

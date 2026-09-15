@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Items_Summary__c</fullName>
+    <label>Items Summary</label>
+    <description>One line the agent can read out, e.g. "24 x 250ml borosilicate beakers, 1 x digital thermometer". Stands in for order products in the demo.</description>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+</CustomField>

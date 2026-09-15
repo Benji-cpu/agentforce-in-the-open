@@ -1,0 +1,14 @@
+81,82c81,83
+<               They ask for a person, or they are angry, or it is a complaint, a bespoke quote,
+<               a trade account, or a purchase order query: escalation.
+---
+>               If they explicitly ask for a person, or are angry, use human_handoff at once,
+>               without answering anything else. A complaint, a bespoke quote, a trade account
+>               or a purchase order query: escalation.
+97a99,100
+>             human_handoff: @utils.escalate
+>                 description: "The customer explicitly asks for a person, or is angry. Transfers the conversation to a human now."
+99c102
+<                 description: "The customer asks for a person, complains, or asks for a quote or trade terms"
+---
+>                 description: "A complaint, a bespoke quote, trade terms or a purchase-order query that needs a person"

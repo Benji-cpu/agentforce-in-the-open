@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "646cf1d4-c7cb-4e15-b563-5e9722477a6c",
+   "metrics": {},
+   "feedbackId": "5eaabcbd-5a2b-4488-8321-1c1837055814",
+   "planId": "5eaabcbd-5a2b-4488-8321-1c1837055814",
+   "isContentSafe": true,
+   "message": "The calibration certificate for the balance on order NI-2045 was emailed to f.macrae@kelsovetlab.example within five working days of dispatch. If you cannot find it, please email calibration@northaven-instruments.example with your order reference and the instrument serial number, and a free reissue will be arranged within 12 months of calibration.\n\nWould you like help with anything else?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "698c2fc9-ef39-4b6b-8dcf-13d704aac22e"
+}

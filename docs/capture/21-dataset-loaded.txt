@@ -1,0 +1,60 @@
+$ ./sf data import tree --plan data/northaven/plan.json
+[1m[33mWarning:[39m[22m The plan contains the 'saveRefs' and/or 'resolveRefs' properties. These properties will be ignored and can be removed.
+Import Results
+┌───────────────┬─────────┬────────────────────┐
+│ Reference ID  │ Type    │ ID                 │
+├───────────────┼─────────┼────────────────────┤
+│ AccWhitcombe  │ Account │ 001aj00003tZVR9AAO │
+│ AccStAlbans   │ Account │ 001aj00003tZVRAAA4 │
+│ AccPennine    │ Account │ 001aj00003tZVRBAA4 │
+│ AccBrightwell │ Account │ 001aj00003tZVRCAA4 │
+│ AccKelso      │ Account │ 001aj00003tZVRDAA4 │
+│ AccHartfield  │ Account │ 001aj00003tZVREAA4 │
+│ AccMoorside   │ Account │ 001aj00003tZVRFAA4 │
+│ AccDunmore    │ Account │ 001aj00003tZVRGAA4 │
+│ ConPriya      │ Contact │ 003aj00002OsIdpAAF │
+│ ConTom        │ Contact │ 003aj00002OsIdqAAF │
+│ ConGrace      │ Contact │ 003aj00002OsIdrAAF │
+│ ConDerek      │ Contact │ 003aj00002OsIdsAAF │
+│ ConSam        │ Contact │ 003aj00002OsIdtAAF │
+│ ConFiona      │ Contact │ 003aj00002OsIduAAF │
+│ ConAmara      │ Contact │ 003aj00002OsIdvAAF │
+│ ConIan        │ Contact │ 003aj00002OsIdwAAF │
+│ ConLowri      │ Contact │ 003aj00002OsIdxAAF │
+│ ConHarriet    │ Contact │ 003aj00002OsIdyAAF │
+│ Ord2041       │ Order   │ 801aj00003tZ7AKAA0 │
+│ Ord2042       │ Order   │ 801aj00003tZ7ALAA0 │
+│ Ord2043       │ Order   │ 801aj00003tZ7AMAA0 │
+│ Ord2044       │ Order   │ 801aj00003tZ7ANAA0 │
+│ Ord2045       │ Order   │ 801aj00003tZ7AOAA0 │
+│ Ord2046       │ Order   │ 801aj00003tZ7APAA0 │
+│ Ord2047       │ Order   │ 801aj00003tZ7AQAA0 │
+│ Ord2048       │ Order   │ 801aj00003tZ7ARAA0 │
+│ Ord2049       │ Order   │ 801aj00003tZ7ASAA0 │
+│ Ord2050       │ Order   │ 801aj00003tZ7ATAA0 │
+│ Ord2051       │ Order   │ 801aj00003tZ7AUAA0 │
+│ Ord2052       │ Order   │ 801aj00003tZ7AVAA0 │
+└───────────────┴─────────┴────────────────────┘
+
+--- exit 0 ---
+
+$ ./sf data query -q "SELECT Order_Reference__c, Fulfilment_Status__c, Carrier__c, Tracking_Number__c, Expected_Delivery__c, Calibration_Certificate__c, BillToContact.Email FROM Order ORDER BY Order_Reference__c"
+Querying Data... done
+┌────────────────────┬──────────────────────┬────────────┬────────────────────┬──────────────────────┬────────────────────────────┬──────────────────────────────────────┐
+│ ORDER_REFERENCE__C │ FULFILMENT_STATUS__C │ CARRIER__C │ TRACKING_NUMBER__C │ EXPECTED_DELIVERY__C │ CALIBRATION_CERTIFICATE__C │ BILLTOCONTACT.EMAIL                  │
+├────────────────────┼──────────────────────┼────────────┼────────────────────┼──────────────────────┼────────────────────────────┼──────────────────────────────────────┤
+│ NI-2041            │ Dispatched           │ DPD        │ 15501234567890     │ 2026-09-16           │ Not applicable             │ p.raman@whitcombe-academy.example    │
+│ NI-2042            │ Processing           │ [1mnull[22m       │ [1mnull[22m               │ 2026-09-18           │ Pending                    │ g.okafor@stalbans-sfc.example        │
+│ NI-2043            │ Delivered            │ Royal Mail │ RM0982374651GB     │ 2026-09-05           │ Not applicable             │ derek@penninewater.example           │
+│ NI-2044            │ Awaiting stock       │ [1mnull[22m       │ [1mnull[22m               │ [1mnull[22m                 │ Not applicable             │ sam@brightwellbrewing.example        │
+│ NI-2045            │ Delivered            │ DPD        │ 15509876543210     │ 2026-09-07           │ Issued                     │ f.macrae@kelsovetlab.example         │
+│ NI-2046            │ Dispatched           │ Royal Mail │ RM1122334455GB     │ 2026-09-15           │ Not applicable             │ abello@hartfield.example             │
+│ NI-2047            │ Cancelled            │ [1mnull[22m       │ [1mnull[22m               │ [1mnull[22m                 │ Not applicable             │ ian@moorsidesoil.example             │
+│ NI-2048            │ Processing           │ [1mnull[22m       │ [1mnull[22m               │ 2026-09-19           │ Not applicable             │ lowri.evans@dunmoreceramics.example  │
+│ NI-2049            │ Processing           │ [1mnull[22m       │ [1mnull[22m               │ 2026-09-17           │ Not applicable             │ t.ashworth@whitcombe-academy.example │
+│ NI-2050            │ Delivered            │ DPD        │ 15505555666677     │ 2026-09-03           │ Pending                    │ h.lindqvist@stalbans-sfc.example     │
+│ NI-2051            │ Dispatched           │ DPD        │ 15507777888899     │ 2026-09-16           │ Not applicable             │ derek@penninewater.example           │
+│ NI-2052            │ Awaiting stock       │ [1mnull[22m       │ [1mnull[22m               │ [1mnull[22m                 │ Not applicable             │ f.macrae@kelsovetlab.example         │
+└────────────────────┴──────────────────────┴────────────┴────────────────────┴──────────────────────┴────────────────────────────┴──────────────────────────────────────┘
+
+[1mTotal number of records retrieved: 12.[22m

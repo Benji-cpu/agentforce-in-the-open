@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "4493269a-5349-4922-9933-685a9d6298d6",
+   "metrics": {},
+   "feedbackId": "24cae36d-0191-4430-b439-e6a36e1b6425",
+   "planId": "24cae36d-0191-4430-b439-e6a36e1b6425",
+   "isContentSafe": true,
+   "message": "Annual recalibration is a paid service and the cost is quoted individually for each instrument. I will hand this over to a person who can provide a quote for your precision balance. Could you please confirm the make and model, or any other details about the balance?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "87d472e3-1d13-4bd6-84b2-19fb90f0c112"
+}

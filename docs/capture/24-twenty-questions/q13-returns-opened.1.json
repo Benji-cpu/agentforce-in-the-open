@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "e45de13b-dede-44d2-9dad-0cff57b3efb9",
+   "metrics": {},
+   "feedbackId": "284eaa4d-e9c6-4135-929f-a54e8c3e129d",
+   "planId": "284eaa4d-e9c6-4135-929f-a54e8c3e129d",
+   "isContentSafe": true,
+   "message": "Opened consumables like gloves cannot be returned for safety reasons, unless they are faulty or damaged. If you believe the gloves are faulty, please let me know and I can help further. If you'd like to discuss this with a person, I can arrange that. Would you like me to put you in touch with someone?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "075d5116-c9be-4c05-8eb4-10f11762b6c2"
+}

@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "26486d73-0f39-4d7d-82d8-b15e85a3e203",
+   "metrics": {},
+   "feedbackId": "723a2a6a-4dc6-4076-be6c-1af49a3dab35",
+   "planId": "723a2a6a-4dc6-4076-be6c-1af49a3dab35",
+   "isContentSafe": true,
+   "message": "Your thermometer is covered for 12 months if damaged. Please photograph the cracked display before packing it. Email returns@northaven-instruments.example with your order reference and the reason. You will get a returns number and label within one working day, and Northaven will cover return postage. Would you like help finding your order reference?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "92439a87-5d2e-41a2-8ad7-8cba8ac41322"
+}

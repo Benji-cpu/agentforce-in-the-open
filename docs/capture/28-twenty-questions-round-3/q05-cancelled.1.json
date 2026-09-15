@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "b0eca0d3-f449-44c3-8027-06e47ce65f5f",
+   "metrics": {},
+   "feedbackId": "776b41f4-e599-4fe6-9096-458156aca39c",
+   "planId": "776b41f4-e599-4fe6-9096-458156aca39c",
+   "isContentSafe": true,
+   "message": "Order NI-2047 for 1 x soil sieve set 8 pieces was cancelled. Any payment is refunded within five working days of cancellation. If you did not expect this, I can put you in touch with a person. Would you like that?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "eb581b3b-e28d-4874-95d2-a0d182e66c97"
+}

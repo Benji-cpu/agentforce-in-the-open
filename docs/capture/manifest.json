@@ -17,7 +17,7 @@
       "file": "03-sf-cli-installed.txt",
       "at": "2026-09-15T02:00Z",
       "session": 1,
-      "shows": "sf --version and sf plugins --core immediately after install. The agent plugin is already there at 1.45.0 as a core plugin \u2014 nothing to install separately."
+      "shows": "sf --version and sf plugins --core immediately after install. The agent plugin is already there at 1.45.0 as a core plugin — nothing to install separately."
     },
     {
       "file": "04-headless-403.png",
@@ -41,7 +41,7 @@
       "file": "06-signup-form-valid.png",
       "at": "2026-09-15T03:06Z",
       "session": 1,
-      "shows": "The same form, filled and valid \u2014 every field carrying its green tick, the Main Services Agreement checked. Email redacted for publication."
+      "shows": "The same form, filled and valid — every field carrying its green tick, the Main Services Agreement checked. Email redacted for publication."
     },
     {
       "file": "07-signup-stuck.png",
@@ -101,7 +101,85 @@
       "file": "17-agentforce-was-off.png",
       "at": "2026-09-15T04:55Z",
       "session": 2,
-      "shows": "The Agentforce-was-off finding in one image, for posting. NOT a photograph of a terminal \u2014 it is a typeset rendering of the text in files 13 and 14, which are the actual captures. The Lightning Setup page itself could not be screenshotted: Playwright and CDP both hang waiting on a webfont that never resolves."
+      "shows": "The Agentforce-was-off finding in one image, for posting. NOT a photograph of a terminal — it is a typeset rendering of the text in files 13 and 14, which are the actual captures. The Lightning Setup page itself could not be screenshotted: Playwright and CDP both hang waiting on a webfont that never resolves."
+    },
+    {
+      "file": "18-session3-start.txt",
+      "at": "2026-09-15T06:59Z",
+      "session": 3,
+      "shows": "The org before session three touched it: 13 stock accounts, 20 stock contacts, 0 orders. Knowledge__kav does not exist (Knowledge is not enabled), and there is no Einstein Agent User."
+    },
+    {
+      "file": "19-deploy-fields-apex-permset.txt",
+      "at": "2026-09-15T07:02Z",
+      "session": 3,
+      "shows": "Deploying the seven custom Order fields, the invocable Apex and the permission sets. Two failed attempts first: tests run in the same deployment as the fields cannot see them, and a metadata deploy grants no field-level security to the deploying user. Ends with 4 of 4 tests passing at 100% coverage."
+    },
+    {
+      "file": "20-agent-script-before.agent",
+      "at": "2026-09-15T07:05Z",
+      "session": 3,
+      "shows": "The generated Agent Script exactly as session two left it, boilerplate and all, kept so the diff to the real one is honest."
+    },
+    {
+      "file": "21-dataset-loaded.txt",
+      "at": "2026-09-15T07:08Z",
+      "session": 3,
+      "shows": "sf data import tree loading the synthetic Northaven dataset, and the twelve orders read back: every fulfilment status represented, two calibrated instruments."
+    },
+    {
+      "file": "22-validate-rewritten.txt",
+      "at": "2026-09-15T07:10Z",
+      "session": 3,
+      "shows": "The rewritten 397-line Agent Script validating: 0 errors, 3.32s. Same verdict the boilerplate got."
+    },
+    {
+      "file": "23-first-conversation.md",
+      "at": "2026-09-15T07:15Z",
+      "session": 3,
+      "shows": "The first live conversation, verbatim: the agent says it is checking the order and never does. Then the trace that explains it — the lookup tool was not on the model's menu because the agent user lacked the permission set — and the same conversation after the fix, answered correctly."
+    },
+    {
+      "file": "24-twenty-questions/",
+      "at": "2026-09-15T07:31Z",
+      "session": 3,
+      "shows": "Round 1 of the measurement: twenty realistic questions, one fresh session each, transcript and raw response per turn, SCORE.md with the verdicts. 15 answered, 2 escalated, 3 wrong."
+    },
+    {
+      "file": "25-agent-script-round1.agent",
+      "at": "2026-09-15T07:40Z",
+      "session": 3,
+      "shows": "The Agent Script as measured in round 1, and 25-round2-instruction-diff.txt is the whole change made before round 2: three instruction edits, no structure."
+    },
+    {
+      "file": "26-twenty-questions-round-2/",
+      "at": "2026-09-15T07:48Z",
+      "session": 3,
+      "shows": "Round 2: 17 answered, 2 escalated, 1 wrong. The multi-turn lookup and the policy question are fixed; the announced-but-not-performed hand-off is not."
+    },
+    {
+      "file": "27-agent-script-round2.agent",
+      "at": "2026-09-15T07:55Z",
+      "session": 3,
+      "shows": "The Agent Script as measured in round 2, and 27-round3-instruction-diff.txt is the one structural change before round 3: @utils.escalate placed in the router."
+    },
+    {
+      "file": "28-twenty-questions-round-3/",
+      "at": "2026-09-15T08:02Z",
+      "session": 3,
+      "shows": "Round 3: 17 answered, 2 escalated, 1 wrong. The same totals as round 2 with the fault moved from q19 to q18. SCORE.md says what that means and what session four changes."
+    },
+    {
+      "file": "29-publish.txt",
+      "at": "2026-09-15T08:10Z",
+      "session": 3,
+      "shows": "sf agent publish authoring-bundle: the agent compiled and published to the org in 44.9s, and what the org now holds for it."
+    },
+    {
+      "file": "30-q19-round1-vs-round3.png",
+      "at": "2026-09-15T08:21Z",
+      "session": 3,
+      "shows": "Question 19 in round 1 and round 3 side by side, for posting. NOT a screenshot of the CLI — a typeset rendering of the transcripts in 24 and 28 and their traces, which are the actual captures."
     }
   ]
 }

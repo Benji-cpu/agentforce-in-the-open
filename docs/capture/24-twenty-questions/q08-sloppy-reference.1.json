@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "c3f11fa8-21ef-4504-8672-8092152b97a8",
+   "metrics": {},
+   "feedbackId": "3f187a1a-e1a4-4a7d-81d5-e2da199421c6",
+   "planId": "3f187a1a-e1a4-4a7d-81d5-e2da199421c6",
+   "isContentSafe": true,
+   "message": "Your order NI-2046 was dispatched by Royal Mail and is due for delivery today, 15/09/2026. You can track it using RM1122334455GB on the Royal Mail tracking page for the latest updates: URL_Redacted.\n\nLet me know if you need help with anything else.",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "2b03192f-3f06-41b5-8e50-0e9b0595e28a"
+}

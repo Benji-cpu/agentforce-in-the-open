@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "32f42459-0bfb-4c61-a6e0-b19c5cafc204",
+   "metrics": {},
+   "feedbackId": "75338d42-5924-42af-a269-ae1b1dfd8db2",
+   "planId": "75338d42-5924-42af-a269-ae1b1dfd8db2",
+   "isContentSafe": true,
+   "message": "Unfortunately, opened boxes of gloves cannot be returned for safety reasons, unless the item is faulty or was sent in error. If you believe you were sent the wrong size by mistake, please let me know and I can hand you over to a person to help further. Would you like me to do that?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "4dce9870-d302-4be9-82bb-ca23ec47a2fa"
+}

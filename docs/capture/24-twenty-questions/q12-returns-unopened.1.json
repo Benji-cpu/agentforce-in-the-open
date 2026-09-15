@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "397b4da2-3845-422f-b51f-617799b61169",
+   "metrics": {},
+   "feedbackId": "d2c83916-9e16-4198-a4da-20bf65991ea8",
+   "planId": "d2c83916-9e16-4198-a4da-20bf65991ea8",
+   "isContentSafe": true,
+   "message": "I can help with your return. Please provide your order reference (it starts with NI- and is in your confirmation email) and the email address used to place the order. Once I have both, I can check your order and start the return process.",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "0c69642f-7d49-47b3-b3de-616bf302fc66"
+}

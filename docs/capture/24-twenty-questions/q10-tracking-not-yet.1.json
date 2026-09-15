@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "68211d90-7a43-4817-8c62-47b6b48858b1",
+   "metrics": {},
+   "feedbackId": "d03fdfff-a7da-44be-a960-e36c7d49fa2b",
+   "planId": "d03fdfff-a7da-44be-a960-e36c7d49fa2b",
+   "isContentSafe": true,
+   "message": "Your order NI-2049 is still processing in our warehouse, so there is no courier tracking number yet. You will get a tracking email as soon as it is dispatched. Is there anything else I can help with?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "ed30b464-bb3a-42c2-9605-333806f3fac2"
+}

@@ -1,0 +1,23 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "c3436247-24d5-4f44-b934-a42f6ba84c43",
+   "metrics": {},
+   "feedbackId": "0b9418c0-cf31-4e23-b8d3-48e0f60c1fb7",
+   "planId": "0b9418c0-cf31-4e23-b8d3-48e0f60c1fb7",
+   "message": "User requested escalation to human.",
+   "result": [],
+   "citedReferences": []
+  },
+  {
+   "type": "Escalate",
+   "id": "c3436247-24d5-4f44-b934-a42f6ba84c43",
+   "metrics": {},
+   "feedbackId": "0b9418c0-cf31-4e23-b8d3-48e0f60c1fb7",
+   "targets": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "4a8a3dfe-b591-402e-8458-9ad6e8bbf001"
+}

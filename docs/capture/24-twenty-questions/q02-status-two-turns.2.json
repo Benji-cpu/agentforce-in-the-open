@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "70aadeae-d5be-4f36-b309-f5e71b887244",
+   "metrics": {},
+   "feedbackId": "fcd04d5f-f343-4909-ad25-6d67c4756f5f",
+   "planId": "fcd04d5f-f343-4909-ad25-6d67c4756f5f",
+   "isContentSafe": true,
+   "message": "Thank you. Please hold while I check the status of order NI-2048 for lowri.evans@dunmoreceramics.example. Would you also like tracking or delivery details once I have the status?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "d2fd19de-2940-49e2-a2f0-6ed45d7e204e"
+}

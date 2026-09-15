@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "58330214-e6f9-4d5e-94c5-25136dc9e994",
+   "metrics": {},
+   "feedbackId": "5745e175-c0ce-4fd6-8d72-39ccee91caa3",
+   "planId": "5745e175-c0ce-4fd6-8d72-39ccee91caa3",
+   "isContentSafe": true,
+   "message": "The calibration certificate for order NI-2050 has not been issued yet. It will be emailed to h.lindqvist@stalbans-sfc.example within five working days of dispatch. Is there anything else I can help with?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "59415f26-f2a7-4e17-a60c-4c18e6503cdd"
+}

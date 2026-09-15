@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "5805a189-a936-46e6-9ea0-bbf27ec24384",
+   "metrics": {},
+   "feedbackId": "e82830be-8fc8-46d7-8340-b3e6a2a30a8e",
+   "planId": "e82830be-8fc8-46d7-8340-b3e6a2a30a8e",
+   "isContentSafe": false,
+   "message": "I will put you through to a person now.",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "88823901-c76f-4f1d-9624-870ef73c0649"
+}

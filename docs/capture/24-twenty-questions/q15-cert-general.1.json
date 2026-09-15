@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "d356d27d-c783-463c-bae8-4695fb765fd9",
+   "metrics": {},
+   "feedbackId": "869c2dc4-75d6-4e28-af22-039fa087ca3c",
+   "planId": "869c2dc4-75d6-4e28-af22-039fa087ca3c",
+   "isContentSafe": true,
+   "message": "If your pH meter was marked \"(calibrated)\" on your order, it comes with a UKAS-traceable calibration certificate. The certificate is a PDF sent to your order email within five working days of dispatch—it is not in the box.\n\nIf you need to check whether your certificate has been sent, please provide your order reference and the email used for the order. Would you like to check the status of a certificate now?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "6cb8547d-8360-4044-8681-0479c08de540"
+}

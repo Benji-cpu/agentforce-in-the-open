@@ -1,0 +1,12 @@
+{ "records": [
+  { "attributes": { "type": "Contact", "referenceId": "ConPriya" },   "AccountId": "@AccWhitcombe",  "FirstName": "Priya",   "LastName": "Raman",     "Email": "p.raman@whitcombe-academy.example",  "Title": "Head of Science" },
+  { "attributes": { "type": "Contact", "referenceId": "ConTom" },     "AccountId": "@AccWhitcombe",  "FirstName": "Tom",     "LastName": "Ashworth",  "Email": "t.ashworth@whitcombe-academy.example", "Title": "Lab Technician" },
+  { "attributes": { "type": "Contact", "referenceId": "ConGrace" },   "AccountId": "@AccStAlbans",   "FirstName": "Grace",   "LastName": "Okafor",    "Email": "g.okafor@stalbans-sfc.example",      "Title": "Chemistry Teacher" },
+  { "attributes": { "type": "Contact", "referenceId": "ConDerek" },   "AccountId": "@AccPennine",    "FirstName": "Derek",   "LastName": "Holroyd",   "Email": "derek@penninewater.example",         "Title": "Lab Manager" },
+  { "attributes": { "type": "Contact", "referenceId": "ConSam" },     "AccountId": "@AccBrightwell", "FirstName": "Sam",     "LastName": "Cheung",    "Email": "sam@brightwellbrewing.example",      "Title": "Head Brewer" },
+  { "attributes": { "type": "Contact", "referenceId": "ConFiona" },   "AccountId": "@AccKelso",      "FirstName": "Fiona",   "LastName": "Macrae",    "Email": "f.macrae@kelsovetlab.example",       "Title": "Senior Technician" },
+  { "attributes": { "type": "Contact", "referenceId": "ConAmara" },   "AccountId": "@AccHartfield",  "FirstName": "Amara",   "LastName": "Bello",     "Email": "abello@hartfield.example",           "Title": "Science Coordinator" },
+  { "attributes": { "type": "Contact", "referenceId": "ConIan" },     "AccountId": "@AccMoorside",   "FirstName": "Ian",     "LastName": "Pargeter",  "Email": "ian@moorsidesoil.example",           "Title": "Director" },
+  { "attributes": { "type": "Contact", "referenceId": "ConLowri" },   "AccountId": "@AccDunmore",    "FirstName": "Lowri",   "LastName": "Evans",     "Email": "lowri.evans@dunmoreceramics.example", "Title": "Quality Lead" },
+  { "attributes": { "type": "Contact", "referenceId": "ConHarriet" }, "AccountId": "@AccStAlbans",   "FirstName": "Harriet", "LastName": "Lindqvist", "Email": "h.lindqvist@stalbans-sfc.example",   "Title": "Physics Teacher" }
+] }

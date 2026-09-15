@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "fac25eba-35c6-41ee-8455-e15cc25fe2ad",
+   "metrics": {},
+   "feedbackId": "60accebb-19cc-4e19-a075-02b838e87dda",
+   "planId": "60accebb-19cc-4e19-a075-02b838e87dda",
+   "isContentSafe": true,
+   "message": "I could not find an order with the reference NI-2041 under that email address. Please check both against your confirmation email. Would you like to try again, or would you prefer to speak to a person?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "4a0afcf2-3b65-473d-abbd-f1798ff4782b"
+}

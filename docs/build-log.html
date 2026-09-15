@@ -473,19 +473,19 @@
   </section>
 
   <section>
-    <h2>Definition of done <span class="count">0 of 7 closed</span></h2>
+    <h2>Definition of done <span class="count">2 of 7 closed</span></h2>
     <div class="done-list">
       <div class="done-row is-open">
         <span class="n">01</span>
         <span class="what">A working agent in a Developer Edition org, reproducible from source in a
           public repo</span>
-        <span class="chip now">scaffold in repo</span>
+        <span class="chip live">published v1</span>
       </div>
-      <div class="done-row">
+      <div class="done-row is-open">
         <span class="n">02</span>
         <span class="what">A measured result — twenty realistic questions: answered, escalated,
           wrong</span>
-        <span class="chip">not started</span>
+        <span class="chip live">17 · 2 · 1</span>
       </div>
       <div class="done-row">
         <span class="n">03</span>
@@ -501,7 +501,7 @@
       <div class="done-row">
         <span class="n">05</span>
         <span class="what">Six Build Notes and two Teardowns published</span>
-        <span class="chip">0 of 8</span>
+        <span class="chip now">0 of 8 · three drafted</span>
       </div>
       <div class="done-row">
         <span class="n">06</span>
@@ -517,7 +517,7 @@
   </section>
 
   <section>
-    <h2>The log <span class="count">2 entries</span></h2>
+    <h2>The log <span class="count">3 entries</span></h2>
     <div class="entries">
 
       <article class="entry">
@@ -718,6 +718,125 @@ Saved agent spec: specs/northaven-agent-spec.yaml
         </div>
       </article>
 
+      <article class="entry">
+        <div class="entry-rail">
+          <span class="sess">03</span>
+          <span class="date">15 Sep 2026</span>
+        </div>
+        <div class="entry-body">
+          <h3>Seventeen of twenty, and every miss was the same miss</h3>
+
+          <div class="field">
+            <p class="label">Set out to do</p>
+            <div class="value">
+              <p>Make the agent do something. Real instructions for the four subagents, one real
+                action that looks an order up, a synthetic dataset behind it, then twenty questions
+                and a count.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <p class="label">What happened</p>
+            <div class="value">
+              <p>All of it, and the count moved three times. The action is an invocable Apex class,
+                <code>NorthavenOrderLookup</code>: order reference and email in, status, carrier,
+                tracking, delivery date and certificate status out, and nothing out unless both
+                match. Behind it, seven custom fields on the standard Order object and twelve
+                invented orders for eight invented customers &mdash; Northaven Instruments does not
+                exist, and neither does Whitcombe Academy.</p>
+              <p>Getting it into the org took three deploys where one should do. Tests that run in
+                the same deployment as new fields cannot see the fields. A metadata deploy grants
+                the deploying user no field-level security, so the data load would have written
+                nothing into them. And the Einstein Agent User's licence refuses <em>View All</em>
+                on Order and Account outright, so the permission set had to stop asking.</p>
+              <p>Then the first conversation. <strong>&ldquo;I am checking the status of your order
+                NI-2041. I will update you as soon as I have the details.&rdquo;</strong> It was not
+                checking anything. The trace showed the model was offered three transitions and no
+                lookup: the agent user did not yet hold the permission set that grants the Apex
+                class, and the runtime does not raise an error for that. It removes the tool from
+                the menu and lets the model improvise. With the permission in place the same
+                question came back with the carrier, the tracking number and the date.</p>
+              <p>Twenty questions, one fresh session each, driven through a small script around
+                <code>sf agent preview</code> so every transcript and trace is saved. Round one:
+                fifteen answered, two escalated, three wrong. Two instruction edits fixed two of
+                the three. Round two: seventeen, two, one. The last one is question 19, a customer
+                asking for a person. The agent said <em>&ldquo;I am passing this to a person
+                now&rdquo;</em> and did not. Salesforce's own pattern library has a name for this
+                &mdash; promised human handoff &mdash; and a structural fix: put
+                <code>@utils.escalate</code> in the router itself. Round three: question 19 hands
+                over. Question 18, which had escalated twice, now narrates instead. Seventeen, two,
+                one.</p>
+              <p>Then <code>sf agent publish</code>: 44.9 seconds, and the org holds
+                <code>Northaven_Support</code> v1.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <p class="label">The number</p>
+            <div class="value">
+              <p class="figure-number">17 &middot; 2 &middot; 1<span>answered, escalated, wrong &mdash; of twenty,
+                after three rounds (15&middot;2&middot;3, then 17&middot;2&middot;1 twice with a
+                different wrong). The lookup ran on all 33 turns that needed it and returned the
+                right record every time. No wrong answer in three rounds was a wrong fact; every
+                one was the model narrating an action instead of taking it.</span></p>
+            </div>
+          </div>
+
+          <div class="field broke">
+            <p class="label">What broke</p>
+            <div class="value">
+              <p><strong>A missing permission does not fail. It disappears.</strong> No error, no
+                warning, no log line: the action is simply absent from the tools the model sees, and
+                the model, being helpful, says it is checking. Anyone handing an agent to a client
+                needs to know that the first symptom of a permissions gap is a polite lie.</p>
+              <p><strong>The org's own judge got it wrong.</strong> Each turn carries a guardrail
+                verdict. On question 19 it read <code>FULLY_RESOLVED</code> for a turn in which the
+                only tool offered was the escalation and it was not called. The verdict scores the
+                words. Scoring has to read the trace.</p>
+              <p><strong>Fixing the promised hand-off in one place moved it to another.</strong> The
+                subagents still hold a two-step route to a person &mdash; transition to an escalation
+                subagent, then call &mdash; and the model narrates that route rather than walking it
+                about one time in three. Session four gives every subagent that offers a person the
+                escalation itself, and counts again.</p>
+              <p><strong>Knowledge is not enabled in this org</strong>, so the three policy topics are
+                grounded in the subagent instructions, not in articles. That is a limitation and it is
+                written down as one.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <p class="label">Capture</p>
+            <div class="value">
+              <figure>
+<pre><span class="cmd">$ node tools/preview.mjs send &lt;session&gt; "Hi, where is my order NI-2041? My email is p.raman@…"</span>
+<span class="miss"># before the agent user held the permission set</span>
+tools offered:  ["to_returns","to_calibration","hand_to_person"]
+I am checking the status of your order NI-2041. I will update you as soon as I have the details.
+
+<span class="miss"># after</span>
+tools offered:  ["find_order","to_returns","to_calibration","hand_to_person"]
+look_up_order({"orderReference":"NI-2041","customerEmail":"p.raman@…"}) -> found=true, Dispatched, DPD
+Order NI-2041, placed 08/09/2026 for 24 x 250ml borosilicate beakers and 12 x 100ml measuring
+cylinders, has been dispatched. It is with DPD, tracking number 15501234567890, expected 16/09/2026.
+</pre>
+                <figcaption>docs/capture/23-first-conversation.md. The three rounds are 24, 26 and 28,
+                  each with a SCORE.md; 30 is the question-19 comparison as one image.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="field">
+            <p class="label">Next</p>
+            <div class="value">
+              <p>Escalation in every subagent that promises one, then the twenty again. Activate
+                the published version and talk to it through the org rather than the local bundle.
+                Then the walkthrough: under four minutes, the question, the lookup, the hand-off, and
+                the number.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -749,7 +868,7 @@ Saved agent spec: specs/northaven-agent-spec.yaml
   </section>
 
   <footer>
-    <p>Agentforce in the Open &middot; build log &middot; 2 entries into an unfinished thing</p>
+    <p>Agentforce in the Open &middot; build log &middot; 3 entries into an unfinished thing</p>
     <p>Last updated 15 September 2026 &middot; <a href="https://github.com/Benji-cpu/agentforce-in-the-open">the repo</a></p>
   </footer>
 

@@ -1,0 +1,19 @@
+84c84,88
+<               If it is genuinely unclear, ask one short question rather than guessing.
+---
+>               If the message is just an email address or an order reference, the customer is
+>               answering a question you asked: go to order_status.
+>               You never answer the customer yourself and never say you are checking something.
+>               Every turn ends in one of the transitions below. If it is genuinely unclear, choose
+>               order_status; it will ask.
+273c277,279
+<             | Answer only from this policy. If the question is not covered, say so and offer a person.
+---
+>             | Answer the question first, from this policy, in the same turn. Do not ask for an
+>               order reference before answering; you only need one if they want a delivery date
+>               checked. If the question is not covered, say so and offer a person.
+376c382,383
+<             | Say plainly that you are passing this to a person, then call escalate_to_human.
+---
+>             | Call escalate_to_human now, in this turn. Do not announce it and stop; the
+>               announcement without the call leaves the customer waiting for nobody.

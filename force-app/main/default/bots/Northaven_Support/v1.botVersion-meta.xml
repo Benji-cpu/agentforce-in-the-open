@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BotVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>v1</fullName>
+    <articleAnswersGPTEnabled>false</articleAnswersGPTEnabled>
+    <botDialogs>
+        <botSteps>
+            <botMessages>
+                <message>Hello, you&apos;ve reached Northaven Instruments support. I can check where an order is, help with a return, or sort out calibration paperwork. How can I help?</message>
+                <messageIdentifier>91a5a7af-901b-4141-ac06-2497e8f3dec2</messageIdentifier>
+            </botMessages>
+            <stepIdentifier>ce6c5d30-8081-4aa0-b233-cb1a882f32d6</stepIdentifier>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <stepIdentifier>ca22f16f-2f5a-4e7d-86f5-8b9445e059c0</stepIdentifier>
+            <type>Wait</type>
+        </botSteps>
+        <developerName>Welcome</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Welcome</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <botDialogs>
+        <botSteps>
+            <botMessages>
+                <message>Sorry, something went wrong on my side. If it keeps happening, email support@northaven-instruments.example and a person will pick it up.</message>
+                <messageIdentifier>b486a9df-72aa-4bdf-8824-23ed52c58fec</messageIdentifier>
+            </botMessages>
+            <stepIdentifier>15ec2ff0-4731-4db6-8071-b0595e3756c9</stepIdentifier>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <stepIdentifier>cbec90bf-c288-416f-82a6-da6da741fe24</stepIdentifier>
+            <type>Wait</type>
+        </botSteps>
+        <developerName>Rich_Content_Error_Handling</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Error Handler</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <botDialogs>
+        <botSteps>
+            <conversationSystemMessage>
+                <type>Transfer</type>
+            </conversationSystemMessage>
+            <stepIdentifier>c3088edc-4d02-4f6c-81e0-3017ab5c3f09</stepIdentifier>
+            <type>SystemMessage</type>
+        </botSteps>
+        <developerName>Transfer_To_Agent</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Transfer To Agent</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <citationsEnabled>false</citationsEnabled>
+    <conversationDefinitionPlanners>
+        <genAiPlannerName>Northaven_Support_v1</genAiPlannerName>
+    </conversationDefinitionPlanners>
+    <conversationSystemDialogs>
+        <dialog>Rich_Content_Error_Handling</dialog>
+        <type>ErrorHandling</type>
+    </conversationSystemDialogs>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Date the order was placed, as text</description>
+        <developerName>order_date</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Order Date</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Not applicable, Pending or Issued</description>
+        <developerName>calibration_certificate</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Calibration Certificate</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Expected delivery date as text</description>
+        <developerName>expected_delivery</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Expected Delivery</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Processing, Awaiting stock, Dispatched, Delivered or Cancelled</description>
+        <developerName>fulfilment_status</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Fulfilment Status</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Why the lookup found nothing, in words safe to read out</description>
+        <developerName>lookup_message</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Lookup Message</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The next topic to be visited</description>
+        <developerName>AgentScriptInternal_next_topic</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Next Topic</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>True once look_up_order has matched a reference and an email</description>
+        <developerName>order_found</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Order Found</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The agent instructions</description>
+        <developerName>AgentScriptInternal_agent_instructions</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Agent Instructions</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The canonical order reference, e.g. NI-2041, once verified</description>
+        <developerName>order_reference</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Order Reference</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Carrier name once dispatched</description>
+        <developerName>carrier</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Carrier</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Carrier tracking number once dispatched</description>
+        <developerName>tracking_number</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Tracking Number</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>What is on the order, one line</description>
+        <developerName>items_summary</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Items Summary</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>Runtime condition evaluation for if statements</description>
+        <developerName>AgentScriptInternal_condition_1</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Runtime Condition 1</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <copilotPrimaryLanguage>en_US</copilotPrimaryLanguage>
+    <defaultStdObjForContactIdFltrEnabled>false</defaultStdObjForContactIdFltrEnabled>
+    <entryDialog>Welcome</entryDialog>
+    <intentDisambiguationEnabled>false</intentDisambiguationEnabled>
+    <intentV3Enabled>false</intentV3Enabled>
+    <isScriptCompatibleAgent>true</isScriptCompatibleAgent>
+    <knowledgeActionEnabled>false</knowledgeActionEnabled>
+    <knowledgeFallbackEnabled>false</knowledgeFallbackEnabled>
+    <smallTalkEnabled>false</smallTalkEnabled>
+    <staticPromptsEnabled>false</staticPromptsEnabled>
+    <stopRecPrompts>false</stopRecPrompts>
+    <stopWelcomePrompts>false</stopWelcomePrompts>
+    <surfacesEnabled>false</surfacesEnabled>
+    <toneType>Casual</toneType>
+</BotVersion>
