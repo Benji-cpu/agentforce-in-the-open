@@ -96,6 +96,12 @@
       "at": "2026-09-15T04:10Z",
       "session": 2,
       "shows": "The bundle compiling: 0 errors in 2.56s. And why that number says nothing about whether the agent works."
+    },
+    {
+      "file": "17-agentforce-was-off.png",
+      "at": "2026-09-15T04:55Z",
+      "session": 2,
+      "shows": "The Agentforce-was-off finding in one image, for posting. NOT a photograph of a terminal \u2014 it is a typeset rendering of the text in files 13 and 14, which are the actual captures. The Lightning Setup page itself could not be screenshotted: Playwright and CDP both hang waiting on a webfont that never resolves."
     }
   ]
 }
