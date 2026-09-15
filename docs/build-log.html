@@ -282,12 +282,6 @@
     color: var(--ink-3);
     letter-spacing: 0.05em;
   }
-  .entry-rail .loc {
-    display: block;
-    margin-top: 0.15rem;
-    color: var(--ink-3);
-    letter-spacing: 0.05em;
-  }
 
   .entry-body { display: flex; flex-direction: column; gap: 1.1rem; min-width: 0; }
 
@@ -397,7 +391,7 @@
     .entry { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; padding: 1.15rem 1.15rem 1.3rem; }
     .entry-rail { display: flex; align-items: baseline; gap: 0.7rem; }
     .entry-rail .sess { font-size: 1.15rem; }
-    .entry-rail .date, .entry-rail .loc { margin-top: 0; }
+    .entry-rail .date { margin-top: 0; }
     .field { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; }
     .field > .label { padding-top: 0; }
     .done-row { grid-template-columns: 2rem minmax(0, 1fr); }
@@ -530,7 +524,6 @@
         <div class="entry-rail">
           <span class="sess">01</span>
           <span class="date">15 Sep 2026</span>
-          <span class="loc">Koh Phangan</span>
         </div>
         <div class="entry-body">
           <h3>A captcha beat me before Agentforce got the chance</h3>
