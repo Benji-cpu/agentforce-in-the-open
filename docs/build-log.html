@@ -484,7 +484,7 @@
         <span class="n">01</span>
         <span class="what">A working agent in a Developer Edition org, reproducible from source in a
           public repo</span>
-        <span class="chip now">started</span>
+        <span class="chip now">org blocked</span>
       </div>
       <div class="done-row">
         <span class="n">02</span>
@@ -500,7 +500,7 @@
       </div>
       <div class="done-row is-open">
         <span class="n">04</span>
-        <span class="what">This log, public from day one, updated every session</span>
+        <span class="what">This log, public from day one, updated every session &mdash; plus the <a href="https://github.com/Benji-cpu/agentforce-in-the-open">public repo</a> behind it</span>
         <span class="chip live">live</span>
       </div>
       <div class="done-row">
@@ -532,47 +532,60 @@
           <span class="loc">Koh Phangan</span>
         </div>
         <div class="entry-body">
-          <h3>Nothing exists yet, and that is the entry</h3>
+          <h3>A captcha beat me before Agentforce got the chance</h3>
 
           <div class="field">
             <p class="label">Set out to do</p>
             <div class="value">
-              <p>Get a link up before there is anything to show on it. Open this log, stand up the
-                repo, install the Salesforce CLI, and sign up for the free Agentforce Developer
-                Edition org.</p>
+              <p>Get a link up before there is anything to show on it. Open this log, stand up a
+                public repo, install the Salesforce CLI, and sign up for the free Agentforce
+                Developer Edition org.</p>
             </div>
           </div>
 
           <div class="field">
             <p class="label">What happened</p>
             <div class="value">
-              <p>The log went up first, on purpose — a build log written after the build is a press
-                release. The repo exists, and <code>docs/capture/</code> started collecting terminal
-                output before a single thing was installed, because the state of a machine with no
-                Salesforce tooling on it cannot be reconstructed afterwards.</p>
-              <p>The CLI went on without a fight, and it brought a surprise with it: the Agentforce
-                plugin is not a plugin any more. <code>agent 1.45.0 (core)</code> ships inside the
-                CLI, so <code>sf agent generate</code> is there the moment the install finishes.
-                Most of the walkthroughs still tell you to install it separately.</p>
+              <p>Three of the four. The log went up first, on purpose — a build log written after
+                the build is a press release. The repo is public at
+                <a href="https://github.com/Benji-cpu/agentforce-in-the-open">Benji-cpu/agentforce-in-the-open</a>,
+                and <code>docs/capture/</code> started collecting terminal output before a single
+                thing was installed, because the state of a machine with no Salesforce tooling on it
+                cannot be reconstructed afterwards.</p>
+              <p>The CLI took eighteen seconds and 714 npm packages, and brought a surprise with it:
+                the Agentforce plugin is not a plugin any more. <code>agent 1.45.0 (core)</code>
+                ships inside the CLI, so <code>sf agent</code> is there the moment the install
+                finishes. Most walkthroughs still tell you to install it separately.</p>
+              <p>Then the org. I drove the signup form from a script — every field green, the
+                agreement ticked, the button clicked — and it has been saying
+                <em>Please wait..</em> ever since.</p>
             </div>
           </div>
 
           <div class="field">
             <p class="label">The number</p>
             <div class="value">
-              <p class="figure-number">18s<span>714 npm packages — Salesforce CLI 2.146.3, from
-                nothing to a working <code>sf</code> binary, on the machine default Node 20.19.2</span></p>
+              <p class="figure-number">0<span>network requests sent in 41 seconds of
+                &ldquo;Please wait..&rdquo; — the form never called Salesforce at all</span></p>
             </div>
           </div>
 
           <div class="field broke">
             <p class="label">What broke</p>
             <div class="value">
-              <p>Nothing yet, in the sense that matters — but the CLI announced itself three versions
-                behind the moment it was installed (2.146.3 against 2.150.6 published), which is the
-                kind of drift that turns into a mystery two sessions from now. Noting it here rather
-                than silently upgrading, so that if something breaks later I know which version it
-                broke on.</p>
+              <p>Two things, and they are different animals. First, <code>www.salesforce.com</code>
+                sits behind Akamai, which serves a headless browser <strong>403 Access Denied</strong>
+                and a headed one <strong>200</strong>. Same script, same machine, same address — one
+                flag between them.</p>
+              <p>Second, and this is the real one: the form loads
+                <code>recaptcha/api.js</code> with an <code>onload</code> callback that never fires,
+                so <code>window.grecaptcha</code> stays undefined, the submit handler waits on a
+                token that will never arrive, and nothing is ever sent. <code>navigator.webdriver</code>
+                is <code>true</code> — this browser is honestly labelled as automated and is not
+                pretending otherwise.</p>
+              <p>That is a captcha doing its job, so it stays undefeated here. Ninety seconds of a
+                human's hands finishes it. There is a lesson for anyone automating Salesforce onboarding
+                in that sentence, and it is not a complaint about the captcha.</p>
             </div>
           </div>
 
@@ -580,14 +593,16 @@
             <p class="label">Capture</p>
             <div class="value">
               <figure>
-<pre><span class="cmd">$ which sf</span>
-<span class="miss">sf not found</span>
+<pre><span class="cmd">$ node sf-signup.mjs</span>   <span class="miss"># headless</span>
+status <span class="miss">403</span> -> https://www.salesforce.com/products/free-trial/developer/
+title: Access Denied
 
-<span class="cmd">$ sf --version</span>
-<span class="miss">zsh: command not found: sf</span>
+<span class="cmd">$ node sf-signup.mjs</span>   <span class="miss"># headless: false — nothing else changed</span>
+status 200 -> https://www.salesforce.com/products/free-trial/developer/
+title: Developer Edition with Agentforce and Data 360 | Salesforce
 </pre>
-                <figcaption>docs/capture/01-before-anything.txt — 01:58:37 UTC, the last moment
-                  this machine had no Salesforce tooling on it.</figcaption>
+                <figcaption>docs/capture/08-headless-403.txt. The screenshots of the form valid,
+                  and then frozen, are files 06 and 07 in the same directory.</figcaption>
               </figure>
             </div>
           </div>
@@ -595,9 +610,13 @@
           <div class="field">
             <p class="label">Next</p>
             <div class="value">
-              <p>The Developer Edition org, authorised to the CLI, and the first
-                <code>sf agent</code> command run against it. Then a small synthetic business to
-                ground the agent in — said out loud as synthetic, every time it appears here.</p>
+              <p>The org, signed up by hand, then <code>sf org login web</code> and the first
+                <code>sf agent</code> command run against it. After that, a small synthetic business
+                to ground the agent in — named as synthetic every time it appears here.</p>
+              <p>One thing worth coming back to: the signup page sells the org on
+                <em>&ldquo;connect Claude Code, Cursor or Codex to your org with hosted MCP&rdquo;</em>
+                and 60-plus MCP tools out of the box. I build with Claude Code every day and had
+                not seen that. If it works as advertised it is the first Teardown.</p>
             </div>
           </div>
         </div>
@@ -635,7 +654,7 @@
 
   <footer>
     <p>Agentforce in the Open &middot; build log &middot; entry 01 of an unfinished thing</p>
-    <p>Last updated 15 September 2026</p>
+    <p>Last updated 15 September 2026 &middot; <a href="https://github.com/Benji-cpu/agentforce-in-the-open">the repo</a></p>
   </footer>
 
 </div>
