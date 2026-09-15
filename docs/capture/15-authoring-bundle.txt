@@ -1,0 +1,10 @@
+# The CLI's own help for 'agent create' says: "We generally don't recommend you use this
+# workflow... Rather, use the agent generate|validate|publish authoring-bundle commands to
+# author agents that use the Agent Script language." The Trailhead quick start still teaches
+# the old one. Taking the recommended route.
+
+$ ./sf agent generate authoring-bundle --spec specs/northaven-agent-spec.yaml --name 'Northaven Support' --api-name Northaven_Support
+ ›   Warning: @salesforce/cli update available from 2.146.3 to 2.150.6.
+Generating authoring bundle: Northaven_Support... done
+Authoring bundle "Northaven Support" was generated successfully.
+--- exit 0 ---

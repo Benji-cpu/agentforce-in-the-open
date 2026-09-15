@@ -1,0 +1,7 @@
+#!/bin/zsh
+# The Salesforce CLI installs fine on Node 20 and then dies on it: its bundled
+# undici calls webidl.util.markAsUncloneable, which does not exist before Node 22.
+# node@22 is keg-only here so the machine default stays 20 for everything else.
+# Every sf command in this repo goes through this wrapper.
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+exec sf "$@"

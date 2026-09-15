@@ -17,7 +17,7 @@
       "file": "03-sf-cli-installed.txt",
       "at": "2026-09-15T02:00Z",
       "session": 1,
-      "shows": "sf --version and sf plugins --core immediately after install. The agent plugin is already there at 1.45.0 as a core plugin — nothing to install separately."
+      "shows": "sf --version and sf plugins --core immediately after install. The agent plugin is already there at 1.45.0 as a core plugin \u2014 nothing to install separately."
     },
     {
       "file": "04-headless-403.png",
@@ -41,7 +41,7 @@
       "file": "06-signup-form-valid.png",
       "at": "2026-09-15T03:06Z",
       "session": 1,
-      "shows": "The same form, filled and valid — every field carrying its green tick, the Main Services Agreement checked. Email redacted for publication."
+      "shows": "The same form, filled and valid \u2014 every field carrying its green tick, the Main Services Agreement checked. Email redacted for publication."
     },
     {
       "file": "07-signup-stuck.png",
@@ -54,6 +54,48 @@
       "at": "2026-09-15T03:12Z",
       "session": 1,
       "shows": "What the page was actually doing while it said Please wait: no request sent, an invisible reCAPTCHA loaded but never initialised, navigator.webdriver true."
+    },
+    {
+      "file": "10-cli-device-login.txt",
+      "at": "2026-09-15T02:38Z",
+      "session": 2,
+      "shows": "Three failed ways to authorise the CLI before the one that worked: org login device (does not exist in sf v2), the same command under Node 20 (the CLI's bundled undici needs Node 22), and SF_CONTAINER_MODE (refuses the web flow outright)."
+    },
+    {
+      "file": "11-org-authorised.txt",
+      "at": "2026-09-15T03:52Z",
+      "session": 2,
+      "shows": "sf org list and sf org display after the web flow completed. Org 00Daj000017UPqrEAG, API 67.0, Connected. sf org display now redacts the access token by default."
+    },
+    {
+      "file": "12-agentforce-enabled.txt",
+      "at": "2026-09-15T03:55Z",
+      "session": 2,
+      "shows": "What the org looked like with Agentforce still off: the sf agent topic fully present, BotDefinition not a queryable sObject, no GenAi metadata in the org yet."
+    },
+    {
+      "file": "13-agent-spec.txt",
+      "at": "2026-09-15T04:05Z",
+      "session": 2,
+      "shows": "agent generate agent-spec: first the AgentforceAiAssist failure, then the same command succeeding once the org toggle was on. Four topics, drafted by the org's own LLM."
+    },
+    {
+      "file": "14-agentforce-toggle.txt",
+      "at": "2026-09-15T04:00Z",
+      "session": 2,
+      "shows": "Where the Agentforce toggle actually lives, and the three places that looked like the answer and were not. There is no metadata for this switch, so it cannot be deployed or handed over as source."
+    },
+    {
+      "file": "15-authoring-bundle.txt",
+      "at": "2026-09-15T04:08Z",
+      "session": 2,
+      "shows": "agent generate authoring-bundle producing Agent Script source in force-app. Includes the CLI's own note that agent create is the route it no longer recommends."
+    },
+    {
+      "file": "16-validate.txt",
+      "at": "2026-09-15T04:10Z",
+      "session": 2,
+      "shows": "The bundle compiling: 0 errors in 2.56s. And why that number says nothing about whether the agent works."
     }
   ]
 }

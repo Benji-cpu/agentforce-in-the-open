@@ -1,5 +1,9 @@
+
+# Salesforce DX
+*.log
+.DS_Store
+.localdevserver/
 .sf/
 .sfdx/
+deploy-options.json
 node_modules/
-.DS_Store
-*.log

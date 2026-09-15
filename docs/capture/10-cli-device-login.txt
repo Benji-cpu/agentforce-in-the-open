@@ -1,0 +1,42 @@
+$ sf org login device --instance-url https://orgfarm-6c3fdc900e-dev-ed.develop.my.salesforce.com --alias agentforce-de --set-default
+ ›   Warning: @salesforce/cli update available from [92m2.146.3[39m to [92m2.150.6[39m.
+ ›   Warning: [33morg login device[39m is not a sf command.
+ ›   Error: Run [36m[1msf help org[22m[39m for a list of available commands.
+--- exit 127 ---
+
+# sf v2 has no device flow. SF_CONTAINER_MODE makes it print the URL instead of
+# opening a browser, so it can be driven into the browser that already holds the session.
+$ SF_CONTAINER_MODE=true sf org login web --instance-url https://orgfarm-6c3fdc900e-dev-ed.develop.my.salesforce.com --alias agentforce-de --set-default
+ ›   Warning: @salesforce/cli update available from [92m2.146.3[39m to [92m2.150.6[39m.
+/Users/benji-m4/.local/node/lib/node_modules/@salesforce/cli/node_modules/@jsforce/jsforce-node/node_modules/undici/lib/web/cache/cachestorage.js:20
+    webidl.util.markAsUncloneable(this)
+                ^
+
+TypeError: webidl.util.markAsUncloneable is not a function
+    at new CacheStorage (/Users/benji-m4/.local/node/lib/node_modules/@salesforce/cli/node_modules/@jsforce/jsforce-node/node_modules/undici/lib/web/cache/cachestorage.js:20:17)
+    at Object.<anonymous> (/Users/benji-m4/.local/node/lib/node_modules/@salesforce/cli/node_modules/@jsforce/jsforce-node/node_modules/undici/index.js:179:25)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/Users/benji-m4/.local/node/lib/node_modules/@salesforce/cli/node_modules/@jsforce/jsforce-node/lib/request.js:8:18)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+
+Node.js v20.19.2
+--- exit 1 ---
+
+# The crash above is a Node version problem, not a Salesforce one: the CLI's bundled
+# undici calls webidl.util.markAsUncloneable, added in Node 22. npm installed it happily
+# on Node 20 and said nothing. node@22 is keg-only on this machine so the default stays 20.
+$ PATH=/opt/homebrew/opt/node@22/bin:$PATH sf --version
+ ›   Warning: @salesforce/cli update available from [92m2.146.3[39m to [92m2.150.6[39m.
+@salesforce/cli/2.146.3 darwin-arm64 node-v22.22.3
+
+$ ./sf org login web --instance-url https://orgfarm-6c3fdc900e-dev-ed.develop.my.salesforce.com --alias agentforce-de --set-default   # SF_CONTAINER_MODE=true
+ ›   Warning: @salesforce/cli update available from [92m2.146.3[39m to [92m2.150.6[39m.
+[1m[31mError (SfError):[39m[22m "org login web" isn't supported when authorizing in a headless environment. Use another OAuth flow, such as the JWT Bearer Flow with the "org login jwt" command.
+
+
+--- exit 1 ---

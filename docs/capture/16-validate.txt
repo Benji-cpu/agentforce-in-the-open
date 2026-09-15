@@ -1,0 +1,29 @@
+$ ./sf agent validate --api-name Northaven_Support
+ ›   Warning: agent validate is not a sf command.
+ ›   Error: Run sf help agent for a list of available commands.
+--- exit 127 ---
+
+# "agent validate" is a topic, not a command. The subcommand is the one that matters:
+
+$ ./sf agent validate authoring-bundle --api-name Northaven_Support
+
+ ─ Validating Northaven_Support Authoring Bundle ─
+
+ ✔ Validating Authoring Bundle 2.56s
+   ▸ Status: COMPLETED
+   ▸ Errors: 0
+
+ Elapsed Time: 2.56s
+--- exit 0 ---
+
+# 0 errors in 2.56s. Worth being precise about what that means: the Agent Script COMPILES.
+# It does not mean the agent works. Three of the four business subagents in the generated
+# bundle carry the same boilerplate reasoning instructions, verbatim --
+#
+#     "Add instructions for the agent on how to process this subagent. For example:
+#      Help the user track their order by asking for necessary details such as order
+#      number or email address."
+#
+# -- including the returns subagent and the calibration-paperwork subagent, neither of
+# which has anything to do with tracking an order. The scaffold is a scaffold. A validator
+# that passes it is telling the truth about syntax and nothing about behaviour.

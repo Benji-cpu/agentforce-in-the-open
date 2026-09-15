@@ -1,0 +1,22 @@
+# Agentforce was OFF in a Developer Edition org signed up specifically FOR Agentforce.
+#
+# Symptom, from the CLI:
+#   $ ./sf agent generate agent-spec --type customer ...
+#   Error (1): This feature is not currently enabled for this user type or org: [AgentforceAiAssist]
+#
+# Things that did NOT diagnose it:
+#   Setup -> Einstein -> Einstein Setup  ->  "Turn on Einstein"  =  ON already.
+#   sf org list metadata-types           ->  GenAiPlannerBundle, GenAiPlugin, GenAiFunction,
+#                                            GenAiPromptTemplate all PRESENT. No Bot, no
+#                                            EinsteinAgentSettings, and no settings type that
+#                                            would let the feature be switched on from source.
+#   sf data query "SELECT ... FROM BotDefinition"
+#                                        ->  sObject type 'BotDefinition' is not supported
+#
+# Where it actually was:
+#   Setup -> Einstein -> Agentforce Studio -> Agentforce Agents
+#   a single toggle labelled "Agentforce", reading Off.
+#
+# After flipping it to On, the same page offers "New Agent" and the CLI command works.
+# There is no metadata representation of this toggle, so it cannot be deployed, committed,
+# or included in a handover repo. It is a click, and it has to be documented as one.

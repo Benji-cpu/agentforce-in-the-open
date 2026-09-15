@@ -1,0 +1,10 @@
+$ ./sf agent generate agent-spec ... (second attempt, Agentforce now On)
+ ›   Warning: @salesforce/cli update available from 2.146.3 to 2.150.6.
+
+=== Agent Details
+
+
+Creating agent spec... done
+
+Saved agent spec: /Users/benji-m4/Documents/Code/agentforce-in-the-open/specs/northaven-agent-spec.yaml
+--- exit 0 ---

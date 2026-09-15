@@ -1,0 +1,29 @@
+$ ./sf org list
+ ›   Warning: @salesforce/cli update available from 2.146.3 to 2.150.6.
+┌────┬───────────────┬───────────────────────────────────────────────┬────────────────────┬───────────┐
+│    │ Alias         │ Username                                      │ Org Id             │ Status    │
+├────┼───────────────┼───────────────────────────────────────────────┼────────────────────┼───────────┤
+│ 🍁 │ agentforce-de │ ben@<dev-org-username-redacted> │ 00Daj000017UPqrEAG │ Connected │
+└────┴───────────────┴───────────────────────────────────────────────┴────────────────────┴───────────┘
+
+
+Legend:  🌳=Default DevHub, 🍁=Default Org      Use --all to see expired and deleted scratch orgs
+
+$ ./sf org display --target-org agentforce-de
+ ›   Warning: @salesforce/cli update available from 2.146.3 to 2.150.6.
+Warning: Secrets are now hidden from 'sf org display' command output. Use the 'sf org auth' commands instead. As a temporary workaround, you can set SF_TEMP_SHOW_SECRETS=true to render these secrets. This workaround will be removed in an upcoming release.
+
+Org Description
+┌──────────────────┬─────────────────────────────────────────────────────────────┐
+│ KEY              │ VALUE                                                       │
+├──────────────────┼─────────────────────────────────────────────────────────────┤
+│ Access Token     │ [REDACTED] Use 'sf org auth show-access-token' to view      │
+│ Alias            │ agentforce-de                                               │
+│ Api Version      │ 67.0                                                        │
+│ Client Id        │ PlatformCLI                                                 │
+│ Connected Status │ Connected                                                   │
+│ Id               │ 00Daj000017UPqrEAG                                          │
+│ Instance Url     │ https://orgfarm-6c3fdc900e-dev-ed.develop.my.salesforce.com │
+│ Username         │ ben@<dev-org-username-redacted>               │
+└──────────────────┴─────────────────────────────────────────────────────────────┘
+
