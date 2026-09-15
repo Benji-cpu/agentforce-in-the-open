@@ -1,0 +1,59 @@
+{
+  "note": "Every file here was written at the moment it describes. Nothing in this directory is reconstructed after the fact; if a session produced no evidence of something, there is no file for it.",
+  "captures": [
+    {
+      "file": "01-before-anything.txt",
+      "at": "2026-09-15T01:58:37Z",
+      "session": 1,
+      "shows": "The machine with no Salesforce tooling on it: node and npm versions, and `which sf` returning nothing. The last moment this state existed."
+    },
+    {
+      "file": "02-sf-cli-install.txt",
+      "at": "2026-09-15T01:59Z",
+      "session": 1,
+      "shows": "npm install -g @salesforce/cli, start to finish. 714 packages, 18 seconds, exit 0."
+    },
+    {
+      "file": "03-sf-cli-installed.txt",
+      "at": "2026-09-15T02:00Z",
+      "session": 1,
+      "shows": "sf --version and sf plugins --core immediately after install. The agent plugin is already there at 1.45.0 as a core plugin — nothing to install separately."
+    },
+    {
+      "file": "04-headless-403.png",
+      "at": "2026-09-15T03:03Z",
+      "session": 1,
+      "shows": "Akamai's Access Denied page, served to a headless Chromium asking for developer.salesforce.com/signup."
+    },
+    {
+      "file": "08-headless-403.txt",
+      "at": "2026-09-15T03:03Z",
+      "session": 1,
+      "shows": "The same script run headless and headed, back to back: 403 then 200. The only difference between the runs is the headless flag."
+    },
+    {
+      "file": "05-signup-form-empty.png",
+      "at": "2026-09-15T03:04Z",
+      "session": 1,
+      "shows": "The Developer Edition signup form as it arrives. Six fields, one agreement, and a marketing opt-in that disappears when the country is set to the UK."
+    },
+    {
+      "file": "06-signup-form-valid.png",
+      "at": "2026-09-15T03:06Z",
+      "session": 1,
+      "shows": "The same form, filled and valid — every field carrying its green tick, the Main Services Agreement checked. Email redacted for publication."
+    },
+    {
+      "file": "07-signup-stuck.png",
+      "at": "2026-09-15T03:08Z",
+      "session": 1,
+      "shows": "Forty seconds after clicking Sign me up. The fields have greyed out, the button reads Please wait.., and it never stops reading Please wait.. Email redacted for publication."
+    },
+    {
+      "file": "09-submit-hangs.txt",
+      "at": "2026-09-15T03:12Z",
+      "session": 1,
+      "shows": "What the page was actually doing while it said Please wait: no request sent, an invisible reCAPTCHA loaded but never initialised, navigator.webdriver true."
+    }
+  ]
+}

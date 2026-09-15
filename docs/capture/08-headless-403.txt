@@ -1,0 +1,14 @@
+$ node sf-signup.mjs          # headless Chromium, playwright-core 1.61
+status 403 -> https://www.salesforce.com/products/free-trial/developer/
+title: Access Denied
+--- TEXT ---
+Access Denied
+You don't have permission to access "http://www.salesforce.com/products/free-trial/developer/" on this server.
+Reference #18.9d114324.1789437784.de6e70eb
+
+$ node sf-signup.mjs          # same script, headless: false
+status 200 -> https://www.salesforce.com/products/free-trial/developer/
+title: Developer Edition with Agentforce and Data 360 | Salesforce
+
+# Akamai serves the signup page 403 to a headless browser and 200 to a headed one.
+# Nothing else changed between the two runs. Same profile, same machine, same IP.

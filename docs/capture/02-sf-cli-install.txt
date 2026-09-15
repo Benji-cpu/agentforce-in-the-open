@@ -1,0 +1,7 @@
+$ npm install -g @salesforce/cli   # default node v20.19.2, 01:58:43Z
+
+added 714 packages in 18s
+
+151 packages are looking for funding
+  run `npm fund` for details
+--- exit: 0 ---

@@ -1,0 +1,15 @@
+# The form validates (every field green, agreement ticked) and the submit button
+# freezes on "Please wait..". After 40s the accessible name of the live region is
+# still "Form is submitting", and performance.getEntriesByType('resource') shows
+# NO request to any Salesforce form endpoint since the click — only analytics and
+# Conviva beacons. Nothing was ever sent.
+#
+# What is on the page:
+#   scripts matching /captcha/:
+#     https://www.google.com/recaptcha/api.js?onload=CaptchaLoaded&one&render=explicit&hl=en-us
+#   typeof window.grecaptcha  -> "undefined"     <- the onload callback never ran
+#   navigator.webdriver       -> true            <- the browser is honestly automated
+#
+# Reading: an invisible reCAPTCHA gates the submit and never resolves for an
+# automated browser, so the handler waits forever on a token that will not arrive.
+# Not worked around. A human does this bit.
