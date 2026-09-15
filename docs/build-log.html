@@ -199,7 +199,7 @@
 
   .spec {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1px;
     background: var(--rule);
     border: 1px solid var(--rule);
@@ -289,7 +289,7 @@
     letter-spacing: 0.05em;
   }
 
-  .entry-body { display: flex; flex-direction: column; gap: 1.1rem; }
+  .entry-body { display: flex; flex-direction: column; gap: 1.1rem; min-width: 0; }
 
   .field {
     display: grid;
@@ -309,7 +309,7 @@
     padding-top: 0.32rem;
     max-width: none;
   }
-  .field > .value { display: flex; flex-direction: column; gap: 0.6rem; }
+  .field > .value { display: flex; flex-direction: column; gap: 0.6rem; min-width: 0; }
   .field p { font-size: 1rem; max-width: var(--measure); }
   .field.broke > .label { color: var(--signal); }
 
@@ -359,8 +359,8 @@
 
   .rules {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1.6rem 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem 2.5rem;
   }
   .rules h4 {
     font-family: var(--mono);
@@ -393,11 +393,12 @@
 
   @media (max-width: 760px) {
     .premise { grid-template-columns: 1fr; }
-    .entry { grid-template-columns: 1fr; gap: 1.1rem; padding: 1.15rem 1.15rem 1.3rem; }
+    .spec, .rules { grid-template-columns: minmax(0, 1fr); }
+    .entry { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; padding: 1.15rem 1.15rem 1.3rem; }
     .entry-rail { display: flex; align-items: baseline; gap: 0.7rem; }
     .entry-rail .sess { font-size: 1.15rem; }
     .entry-rail .date, .entry-rail .loc { margin-top: 0; }
-    .field { grid-template-columns: 1fr; gap: 0.35rem; }
+    .field { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; }
     .field > .label { padding-top: 0; }
     .done-row { grid-template-columns: 2rem minmax(0, 1fr); }
     .done-row .chip { grid-column: 2; justify-self: start; margin-top: 0.35rem; }
