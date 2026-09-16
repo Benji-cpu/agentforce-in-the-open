@@ -1,3 +1,6 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agentforce in the Open</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -404,15 +407,17 @@
   <header>
     <p class="eyebrow">Public build log &middot; opened 15 September 2026</p>
     <h1>Agentforce in the&nbsp;Open</h1>
-    <p class="standfirst">A Salesforce architect with eight active certifications, four years in an
-      org, and <strong>no Agentforce in production</strong>, building his first one where
-      everyone can watch. Every session gets an entry. The failures stay in.</p>
+    <p class="standfirst">Testing a support agent against synthetic orders: what it answers, what it actually
+      does, and where it still fails. A Developer Edition prototype, <strong>not a customer deployment</strong>.</p>
     <div class="masthead-rule"></div>
   </header>
 
   <section class="premise">
     <div class="stack">
-      <h2>Where this starts <span class="count">the honest version</span></h2>
+      <h2>What this tests</h2>
+      <p>A customer should get an order status from the right record, a clear refusal when details
+      do not match, and a real route to a person when the agent cannot help. A convincing reply
+      is only one part of that test. <a href="https://github.com/Benji-cpu/agentforce-in-the-open/blob/main/docs/what-the-agent-actually-did.md">Read the short explanation and evidence</a>.</p>
       <p>I was the Salesforce application architect at BVNK — London crypto payments — for four
         years: B2B and B2C onboarding with KYB and KYC, Flows, integrations. Before that, a Service
         Cloud migration at Coindirect. I have been out of a Salesforce org since 2023, and spent
@@ -452,12 +457,12 @@
       <div>
         <h4>The agent</h4>
         <p>A service agent for a small business that deflects the three most repetitive support
-          questions, grounded in knowledge articles.</p>
+          questions. Policies currently live in instructions; Knowledge article retrieval is unfinished.</p>
       </div>
       <div>
         <h4>One real action</h4>
-        <p>Not a chatbot demo. It looks something up or creates a case — it does a thing — and hands
-          over cleanly to a human when it cannot.</p>
+        <p>Looks up a synthetic order after matching its reference and email. Human receipt of
+          an escalated conversation has not yet been verified.</p>
       </div>
       <div>
         <h4>Built as source</h4>
@@ -473,18 +478,16 @@
   </section>
 
   <section>
-    <h2>Definition of done <span class="count">2 of 7 closed</span></h2>
+    <h2>Delivery status <span class="count">reviewed 16 Sep 2026</span></h2>
     <div class="done-list">
       <div class="done-row is-open">
         <span class="n">01</span>
-        <span class="what">A working agent in a Developer Edition org, reproducible from source in a
-          public repo</span>
-        <span class="chip live">published v1</span>
+        <span class="what">Agent source and a published version; activated-version parity and customer-channel tests remain open</span>
+        <span class="chip now">v1 inactive</span>
       </div>
       <div class="done-row is-open">
         <span class="n">02</span>
-        <span class="what">A measured result — twenty realistic questions: answered, escalated,
-          wrong</span>
+        <span class="what">Twenty synthetic development questions, reused during tuning. Escalation means a preview event, not human receipt</span>
         <span class="chip live">17 · 2 · 1</span>
       </div>
       <div class="done-row">
@@ -500,8 +503,8 @@
       </div>
       <div class="done-row">
         <span class="n">05</span>
-        <span class="what">Six Build Notes and two Teardowns published</span>
-        <span class="chip now">0 of 8 · three drafted</span>
+        <span class="what">One useful evidence-led post, then a second only if it adds a distinct lesson; the old eight-post quota is retired</span>
+        <span class="chip now">draft · not posted</span>
       </div>
       <div class="done-row">
         <span class="n">06</span>
@@ -517,7 +520,11 @@
   </section>
 
   <section>
-    <h2>The log <span class="count">3 entries</span></h2>
+    <h2>The log <span class="count">3 original sessions + review</span></h2>
+    <p><strong>16 September review:</strong> the earlier “33 of 33” claim is withdrawn, preview
+    escalation is distinguished from human receipt, and the direct handoff path has been revised.
+    <a href="https://github.com/Benji-cpu/agentforce-in-the-open/blob/main/docs/review-2026-09-16.md">Current audit and results</a>.
+    Earlier entries below describe what was believed at the time.</p>
     <div class="entries">
 
       <article class="entry">
@@ -776,19 +783,20 @@ Saved agent spec: specs/northaven-agent-spec.yaml
             <div class="value">
               <p class="figure-number">17 &middot; 2 &middot; 1<span>answered, escalated, wrong &mdash; of twenty,
                 after three rounds (15&middot;2&middot;3, then 17&middot;2&middot;1 twice with a
-                different wrong). The lookup ran on all 33 turns that needed it and returned the
-                right record every time. No wrong answer in three rounds was a wrong fact; every
-                one was the model narrating an action instead of taking it.</span></p>
+                different wrong). <del>The lookup ran on all 33 turns that needed it. No wrong facts.</del>
+                Correction, 16 Sep: traces show 12, 13 and 13 lookup calls, including six negative
+                lookups. Round-one question 2 never called it. A claim that an action happened
+                is itself a factual claim. These were preview runs, not received human handoffs.</span></p>
             </div>
           </div>
 
           <div class="field broke">
             <p class="label">What broke</p>
             <div class="value">
-              <p><strong>A missing permission does not fail. It disappears.</strong> No error, no
-                warning, no log line: the action is simply absent from the tools the model sees, and
-                the model, being helpful, says it is checking. Anyone handing an agent to a client
-                needs to know that the first symptom of a permissions gap is a polite lie.</p>
+              <p><strong>The lookup was absent from the available tools.</strong> In this captured
+                preview, missing Apex access produced no conversation-level permissions error.
+                The reply promised a lookup anyway. The lesson is to inspect execution and access
+                together; this single observation does not describe every permissions failure.</p>
               <p><strong>The org's own judge got it wrong.</strong> Each turn carries a guardrail
                 verdict. On question 19 it read <code>FULLY_RESOLVED</code> for a turn in which the
                 only tool offered was the escalation and it was not called. The verdict scores the
@@ -796,8 +804,9 @@ Saved agent spec: specs/northaven-agent-spec.yaml
               <p><strong>Fixing the promised hand-off in one place moved it to another.</strong> The
                 subagents still hold a two-step route to a person &mdash; transition to an escalation
                 subagent, then call &mdash; and the model narrates that route rather than walking it
-                about one time in three. Session four gives every subagent that offers a person the
-                escalation itself, and counts again.</p>
+                in some of these development cases. Three rounds with changing instructions cannot
+                establish a failure rate. The 16 September review gives those subagents a direct
+                escalation action and repeats the check.</p>
               <p><strong>Knowledge is not enabled in this org</strong>, so the three policy topics are
                 grounded in the subagent instructions, not in articles. That is a limitation and it is
                 written down as one.</p>

@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "adc28b8e-4a45-44cf-a28a-f85a4a967bd6",
+   "metrics": {},
+   "feedbackId": "d1614642-0a34-4f40-849e-2c690f46ad27",
+   "planId": "d1614642-0a34-4f40-849e-2c690f46ad27",
+   "isContentSafe": true,
+   "message": "Order NI-2044 (1 x refractometer 0-32 Brix, 6 x hydrometer) is awaiting stock. The warehouse will email you when it ships. Would you like me to hand you over to a person if you need a delivery date?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "acab798d-dcac-49c7-bb68-50b09941e99d"
+}

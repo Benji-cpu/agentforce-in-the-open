@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "80e71c17-d665-40b1-82fc-cb9bbfee5f19",
+   "metrics": {},
+   "feedbackId": "d2407e33-acaa-4820-9ce8-5c2176ad3ce5",
+   "planId": "d2407e33-acaa-4820-9ce8-5c2176ad3ce5",
+   "isContentSafe": true,
+   "message": "Your order NI-2051 has been dispatched by DPD. The tracking number is 15507777888899. You can enter this number on DPD's tracking page for the live status: URL_Redacted.\n\nIs there anything else I can help with?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "2d6fc0fb-e8ab-4292-beb7-ebcd21dd179b"
+}

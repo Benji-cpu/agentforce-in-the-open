@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "75dee9c0-1aa6-4025-823c-571e92036f3b",
+   "metrics": {},
+   "feedbackId": "f8f24110-890e-40a3-9541-1bc6112ebe36",
+   "planId": "f8f24110-890e-40a3-9541-1bc6112ebe36",
+   "isContentSafe": true,
+   "message": "Order NI-2046 was placed on 11/09/2026 for 40 safety goggles and 10 boxes of nitrile gloves (M). It has been dispatched by Royal Mail. The tracking number is RM1122334455GB and expected delivery was 15/09/2026.\n\nWould you like the tracking link or any more help with this order?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "049da893-f393-4051-8255-c00edac14094"
+}

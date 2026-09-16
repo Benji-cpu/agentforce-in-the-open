@@ -1,0 +1,8 @@
+# q04-delivered
+
+_session 8b4fbf7d-4bf6-4f8c-a4b9-871d419c5aea_
+
+**Customer:** derek@penninewater.example here, checking NI-2043
+
+**Agent (7.4s):** Order NI-2043, placed 02/09/2026 for 50 x sample bottles 1L and 2 x turbidity standards, shows as Delivered. If you have not received it, I can put you in touch with a person to help. Would you like me to do that?
+

@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "f623d2b7-5e0e-41d0-8003-034db01d0a0e",
+   "metrics": {},
+   "feedbackId": "82b2e0bd-7e88-4813-809a-17caf24eccf6",
+   "planId": "82b2e0bd-7e88-4813-809a-17caf24eccf6",
+   "isContentSafe": true,
+   "message": "I need the email address the order was placed under to check the status. Could you provide that, please?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "2b00ef60-bed8-4b17-b025-9525e3a0bbee"
+}

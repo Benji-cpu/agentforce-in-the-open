@@ -196,7 +196,7 @@ subagent order_status:
                 description: "The customer now wants to return something from this order"
             to_calibration: @utils.transition to @subagent.calibration_paperwork_requests
                 description: "The customer now asks about the calibration certificate"
-            hand_to_person: @utils.transition to @subagent.escalation
+            hand_to_person: @utils.escalate
                 description: "The customer wants a person, or the order was delivered and they say it was not"
 
 subagent delivery_tracking:
@@ -268,7 +268,7 @@ subagent delivery_tracking:
                 set @variables.tracking_number = @outputs.trackingNumber
                 set @variables.expected_delivery = @outputs.expectedDelivery
                 set @variables.lookup_message = @outputs.message
-            hand_to_person: @utils.transition to @subagent.escalation
+            hand_to_person: @utils.escalate
                 description: "A parcel is late or missing and the customer needs a person to chase the carrier"
 
 subagent returns_and_refund_process:
@@ -298,7 +298,7 @@ subagent returns_and_refund_process:
         actions:
             to_order_status: @utils.transition to @subagent.order_status
                 description: "Check the order's delivery date or contents first"
-            hand_to_person: @utils.transition to @subagent.escalation
+            hand_to_person: @utils.escalate
                 description: "A complaint, a dispute, or something the policy does not cover"
 
 subagent calibration_paperwork_requests:
@@ -373,7 +373,7 @@ subagent calibration_paperwork_requests:
                 set @variables.items_summary = @outputs.itemsSummary
                 set @variables.calibration_certificate = @outputs.calibrationCertificate
                 set @variables.lookup_message = @outputs.message
-            hand_to_person: @utils.transition to @subagent.escalation
+            hand_to_person: @utils.escalate
                 description: "A recalibration quote, or a certificate question the policy does not answer"
 
 subagent escalation:

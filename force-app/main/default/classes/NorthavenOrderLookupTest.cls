@@ -44,6 +44,11 @@ private class NorthavenOrderLookupTest {
     static void refusesUnknownReference() {
         NorthavenOrderLookup.Result r = call('NI-0000', 'buyer@example.test');
         System.assertEquals(false, r.found);
+        NorthavenOrderLookup.Result mismatch = call('NI-9001', 'someone-else@example.test');
+        // Ignore the user-supplied reference; the response must not disclose which exists.
+        System.assertEquals(r.message.replace('NI-0000', 'REF'), mismatch.message.replace('NI-9001', 'REF'));
+        System.assertEquals(null, r.itemsSummary);
+        System.assertEquals(null, mismatch.itemsSummary);
     }
 
     @IsTest

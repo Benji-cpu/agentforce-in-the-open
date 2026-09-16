@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "366eb650-9110-48a2-81b3-83b0626798dc",
+   "metrics": {},
+   "feedbackId": "601e8ac4-b61b-4595-8206-bdc330fff0e9",
+   "planId": "601e8ac4-b61b-4595-8206-bdc330fff0e9",
+   "isContentSafe": true,
+   "message": "Yes, you can return the beakers if they are unused and still in their unopened original packaging. Returns are accepted within 30 days of delivery for a full refund of the goods, but you would need to pay the return postage unless the items were faulty or sent in error.\n\nTo start a return, please email returns@northaven-instruments.example with your order reference and the reason for the return. You'll receive a returns number and label within one working day.\n\nWould you like to check your delivery date to make sure you are within the 30-day window?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "7f5af384-467a-40bf-ba2d-e2a8f851cb3c"
+}

@@ -1,34 +1,34 @@
 #!/usr/bin/env node
-// For each transcript in a run directory, read the local traces the CLI wrote under
-// .sfdx/agents/<bundle>/sessions/<session>/traces and print what actually happened:
-// which subagent handled it, whether an action ran and what it returned, whether the
-// turn escalated, and the org's own guardrail verdict on task resolution.
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+// Evidence report only. A human still scores correctness against tests/twenty-questions.json.
+// --export writes an allowlisted summary for this SYNTHETIC dataset. Never use on client traces.
+import { readFileSync, readdirSync, existsSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-const BUNDLE = process.env.BUNDLE || 'Northaven_Support';
+import { extractEvidence } from './trace-evidence.mjs';
 const dir = process.argv[2];
-for (const md of readdirSync(dir).filter(f => f.endsWith('.md')).sort()) {
-  const text = readFileSync(join(dir, md), 'utf8');
-  const session = (text.match(/_session ([0-9a-f-]+)_/) || [])[1];
-  console.log(`\n## ${md.replace('.md', '')}  session=${session}`);
-  const tdir = join('.sfdx', 'agents', BUNDLE, 'sessions', session || 'none', 'traces');
-  if (!session || !existsSync(tdir)) { console.log('  (no traces)'); continue; }
-  const traces = readdirSync(tdir).filter(f => f.endsWith('.json')).map(f => JSON.parse(readFileSync(join(tdir, f), 'utf8')));
-  traces.sort((a, b) => (a.plan?.[0]?.startExecutionTime || 0) - (b.plan?.[0]?.startExecutionTime || 0));
-  let n = 0;
-  for (const t of traces) {
-    n++;
-    const agents = [], fns = [], types = new Set(); let verdict = '', esc = false, msg = '';
-    for (const p of t.plan || []) {
-      types.add(p.type);
-      if (p.type === 'NodeEntryStateStep') agents.push(p.data?.agent_name);
-      if (p.type === 'FunctionStep') fns.push(`${p.function?.name}(${JSON.stringify(p.function?.input)}) → ${JSON.stringify(p.function?.output || {}).slice(0, 220)}`);
-      if (p.type === 'GuardrailsStep') verdict = (p.taskResolution || '').split('\n')[0];
-      if (p.type === 'PlannerResponseStep') msg = p.message || '';
-      if (/Escalat/i.test(p.type) || JSON.stringify(p).includes('"__escalat') || JSON.stringify(p.data || {}).includes('escalate')) esc = true;
-    }
-    console.log(`  turn ${n}: topic=${t.topic} path=${agents.join('>')}`);
-    for (const f of fns) console.log(`    action: ${f}`);
-    console.log(`    verdict=${verdict || '(none)'}${esc ? '  ESCALATION-STEP' : ''}  types=${[...types].filter(x => !/Step$/.test(x) || /Escalat|Function|Transition|Error/.test(x)).join(',')}`);
-  }
+if (!dir) throw new Error('Usage: node tools/score-traces.mjs <run-directory> [--export]');
+const bundle = process.env.BUNDLE || 'Northaven_Support';
+const cases = JSON.parse(readFileSync('tests/twenty-questions.json', 'utf8'));
+const report = { scope: 'Synthetic authoring-bundle preview; human receipt is NOT verified.', cases: [] };
+let missing = false;
+for (const c of cases) {
+  const file = join(dir, `${c.id}.md`);
+  const text = existsSync(file) ? readFileSync(file, 'utf8') : '';
+  const session = text.match(/_session ([0-9a-f-]+)_/)?.[1];
+  const tdir = join('.sfdx', 'agents', bundle, 'sessions', session || 'none', 'traces');
+  const files = existsSync(tdir) ? readdirSync(tdir).filter(f => f.endsWith('.json')) : [];
+  const traces = files.map(f => JSON.parse(readFileSync(join(tdir, f), 'utf8')))
+    .sort((a, b) => (a.plan?.[0]?.startExecutionTime || 0) - (b.plan?.[0]?.startExecutionTime || 0));
+  const turns = traces.map(extractEvidence);
+  const complete = turns.length === c.turns.length && !text.includes('**ERROR:**');
+  missing ||= !complete;
+  const responseEvents = c.turns.map((_, i) => {
+    const file = join(dir, `${c.id}.${i + 1}.json`);
+    if (!existsSync(file)) { missing = true; return null; }
+    const raw = JSON.parse(readFileSync(file, 'utf8'));
+    return (raw.messages || []).filter(m => m.type === 'Escalate').map(m => ({ type: m.type, targets: m.targets || [] }));
+  });
+  report.cases.push({ id: c.id, complete, expected: c.expect, turns, responseEvents });
+  console.log(`${c.id}: ${complete ? 'complete' : 'INCOMPLETE'}; lookup=${turns.reduce((n, t) => n + t.actions.filter(a => a.name === 'look_up_order').length, 0)}; previewEscalation=${turns.some(t => t.reachedHumanNode)}; humanReceipt=unverified`);
 }
+if (process.argv.includes('--export')) writeFileSync(join(dir, 'execution-evidence.json'), JSON.stringify(report, null, 2) + '\n');
+if (missing) process.exitCode = 1;

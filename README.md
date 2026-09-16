@@ -1,49 +1,45 @@
 # Agentforce in the Open
 
-Building a first Agentforce agent from zero, in public, with the failures left in.
+Can a support agent look up an order, refuse an incorrect email and ask for human help without
+claiming to have done work it never performed?
 
-I am a Salesforce architect: eight active certifications, four of them architect-level
-(Application Architect, Integration Architect, Data Architect, Sharing and Visibility
-Architect), four years as the application architect at a London fintech. I have not been
-inside a Salesforce org since 2023, and I have never shipped an Agentforce agent.
+This repository is my first Agentforce prototype, built in a Salesforce Developer Edition org.
+**Northaven Instruments is fictional. Every customer, order and policy is synthetic.** I have
+Salesforce architecture experience; this project is not evidence of a production Agentforce rollout.
 
-The two years since have gone on AI agents outside the Salesforce world — production
-agents, MCP servers, the plumbing underneath them. This repo is the join between those two
-things, written down while it happens rather than after it worked.
+Start with [what the agent actually did](docs/what-the-agent-actually-did.md): a short account of a
+permission failure, how I diagnosed it and what still needs testing. The code and captured evidence
+are here for anyone who wants to inspect the work.
 
-**Build log:** [Agentforce in the Open](https://claude.ai/artifact/MyQNgZ69x8jHkgh2bUNHVi)
-— one entry per working session: what I set out to do, what actually happened, the number,
-what broke, what is next.
+## Current evidence — reviewed 16 September 2026
 
-## What is being built
+- Order lookup: live Apex action against synthetic records; four Apex tests pass after the review
+  fix. Email/reference matching is a demo gate, **not customer authentication**.
+- Original measured rounds: 15 / 2 / 3, then 17 / 2 / 1 twice, where the categories were acceptable
+  reply / preview escalation / failed case. The same 20 questions were reused while tuning.
+- Published v1 was inactive when the original measurement was made. Those runs used the local
+  authoring bundle with live actions, not an activated deployment or a customer-facing channel.
+- A preview escalation event does **not** prove a human received anything. Its recorded targets
+  were empty. Queue receipt, context transfer and unavailable-human behaviour remain unverified.
+- Policies are in instructions. Salesforce Knowledge is not enabled; article retrieval is unfinished.
+- No customer outcomes, deflection rate, production reliability or cost saving have been measured.
 
-A service agent for a small business that:
+The review results are in [the evidence audit](docs/review-2026-09-16.md). The original
+[build log source](docs/build-log.html) retains the session history. Its older hosted Claude
+artifact may lag this repository; use the files here for the corrected account.
 
-- answers the three most repetitive support questions, grounded in knowledge articles
-- takes **one real action** — looks something up, or opens a case; not a chatbot demo
-- escalates cleanly to a human when it does not know
-- is defined as **metadata**, deployable from this repo with `sf project deploy start`
+Latest review regression: **14 complete replies, three partial replies and three preview
+escalation events**. All intended escalation cases executed in this run; omitted answer details
+remain. [Case-by-case results](docs/capture/31-review-round-4/SCORE.md). The revised bundle has not
+replaced published v1.
 
-and then gets **measured**: twenty realistic questions, scored as answered / escalated /
-answered wrong. That last count is the headline, and it is the number almost no Agentforce
-demo publishes.
+## Correction to the original measurement
 
-## Status
-
-| | |
-|---|---|
-| Salesforce CLI | installed — `@salesforce/cli/2.146.3`, `agent` plugin 1.45.0 (core). Run it through `./sf`, not bare `sf` — see below |
-| Developer Edition org | **live**, authorised, Agentforce toggled on |
-| Agent blueprint | **built and published** — Agent Script at `force-app/main/default/aiAuthoringBundles/Northaven_Support/`, 397 lines, four business subagents with their own instructions; published to the org as `Northaven_Support` v1 |
-| One real action | **done** — `NorthavenOrderLookup`, an invocable Apex class: order reference + email in, status / carrier / tracking / certificate out, nothing out on a mismatch. 4 unit tests, 100% coverage |
-| Synthetic dataset | **loaded** — 8 customers, 10 contacts, 12 orders across every fulfilment status (`data/northaven/`) |
-| Measured result | **17 answered · 2 escalated · 1 wrong** of 20, after three rounds (15·2·3 → 17·2·1 → 17·2·1). Transcripts and traces in `docs/capture/24`, `26`, `28` |
-| Knowledge articles | not enabled in this org; the three policy topics are grounded in the subagent instructions instead. Recorded as a limitation, not hidden |
-| Recorded walkthrough | not yet |
-
-The demo business, **Northaven Instruments**, is a fictional small British lab-supplies
-shop. It does not exist. Everything the agent appears to know about it was invented for
-this build, and it will say so wherever it appears.
+The earlier “33 of 33 lookup turns” claim was incorrect. Re-reading the saved traces found
+**12, 13 and 13 lookup calls** in rounds one, two and three: 38 in total, including six negative
+lookups. Round-one question 2 never called the lookup. The three exported `execution-evidence.json`
+files preserve that audit. A claim to have escalated when no escalation occurred is also a false
+statement; the old “no wrong facts” wording has been withdrawn.
 
 ## Reproducing this
 
@@ -145,10 +141,10 @@ The order matters, and each step below is there because the obvious order failed
 
 Set `access.default_agent_user` in the `.agent` file to the username you created.
 
-**If the agent says "I am checking that for you" and never does, it is step 5.** A missing
-permission on the Apex class does not raise an error anywhere. The runtime removes the action
-from the tools the model is offered, and the model improvises. The trace shows the tool list
-shrinking; nothing else does (`docs/capture/23-first-conversation.md`).
+**If the agent promises a lookup but does not execute it, check step 5 and the trace.** In this
+org, missing Apex access removed the lookup from the offered tools without a conversation-level
+permissions error. Other failures can produce similar symptoms; inspect the actual tool list
+before diagnosing the cause (`docs/capture/23-first-conversation.md`).
 
 ### Talking to it, and measuring it
 
@@ -161,7 +157,7 @@ node tools/preview.mjs send <session> "Where is NI-2041? p.raman@whitcombe-acade
 node tools/preview.mjs end <session>
 
 node tools/preview.mjs run tests/twenty-questions.json docs/capture/<run-dir>   # the measurement
-node tools/score-traces.mjs docs/capture/<run-dir>    # what actually happened, from the traces
+node tools/score-traces.mjs docs/capture/<run-dir> --export # synthetic execution evidence
 ```
 
 `tests/twenty-questions.json` is the twenty: one fresh session per case, the expected outcome
@@ -205,9 +201,8 @@ accurately. Everything in there was written as it happened.
 
 ## What you will and will not find here
 
-- **Everything from the Developer Edition org is public**: the config, the prompts, the
-  measured numbers, the costs, the mistakes. It is my own sandbox and there is nobody in it
-  to protect.
+- **Reviewed synthetic evidence is public**: selected config, prompts, measurements and
+  failures. Credentials, tokens, session secrets and personal account details must stay private.
 - **Nothing from a real client** without their permission in writing — not the name, not
   the data, not a screenshot, not the industry if it identifies them.
 - **No number that was not measured**, and no demo implying production experience I do not

@@ -17,7 +17,7 @@
       "file": "03-sf-cli-installed.txt",
       "at": "2026-09-15T02:00Z",
       "session": 1,
-      "shows": "sf --version and sf plugins --core immediately after install. The agent plugin is already there at 1.45.0 as a core plugin — nothing to install separately."
+      "shows": "sf --version and sf plugins --core immediately after install. The agent plugin is already there at 1.45.0 as a core plugin \u2014 nothing to install separately."
     },
     {
       "file": "04-headless-403.png",
@@ -41,7 +41,7 @@
       "file": "06-signup-form-valid.png",
       "at": "2026-09-15T03:06Z",
       "session": 1,
-      "shows": "The same form, filled and valid — every field carrying its green tick, the Main Services Agreement checked. Email redacted for publication."
+      "shows": "The same form, filled and valid \u2014 every field carrying its green tick, the Main Services Agreement checked. Email redacted for publication."
     },
     {
       "file": "07-signup-stuck.png",
@@ -101,7 +101,7 @@
       "file": "17-agentforce-was-off.png",
       "at": "2026-09-15T04:55Z",
       "session": 2,
-      "shows": "The Agentforce-was-off finding in one image, for posting. NOT a photograph of a terminal — it is a typeset rendering of the text in files 13 and 14, which are the actual captures. The Lightning Setup page itself could not be screenshotted: Playwright and CDP both hang waiting on a webfont that never resolves."
+      "shows": "The Agentforce-was-off finding in one image, for posting. NOT a photograph of a terminal \u2014 it is a typeset rendering of the text in files 13 and 14, which are the actual captures. The Lightning Setup page itself could not be screenshotted: Playwright and CDP both hang waiting on a webfont that never resolves."
     },
     {
       "file": "18-session3-start.txt",
@@ -137,7 +137,7 @@
       "file": "23-first-conversation.md",
       "at": "2026-09-15T07:15Z",
       "session": 3,
-      "shows": "The first live conversation, verbatim: the agent says it is checking the order and never does. Then the trace that explains it — the lookup tool was not on the model's menu because the agent user lacked the permission set — and the same conversation after the fix, answered correctly."
+      "shows": "The first live conversation, verbatim: the agent says it is checking the order and never does. Then the trace that explains it \u2014 the lookup tool was not on the model's menu because the agent user lacked the permission set \u2014 and the same conversation after the fix, answered correctly."
     },
     {
       "file": "24-twenty-questions/",
@@ -179,7 +179,19 @@
       "file": "30-q19-round1-vs-round3.png",
       "at": "2026-09-15T08:21Z",
       "session": 3,
-      "shows": "Question 19 in round 1 and round 3 side by side, for posting. NOT a screenshot of the CLI — a typeset rendering of the transcripts in 24 and 28 and their traces, which are the actual captures."
+      "shows": "Question 19 in round 1 and round 3 side by side, for posting. NOT a screenshot of the CLI \u2014 a typeset rendering of the transcripts in 24 and 28 and their traces, which are the actual captures."
+    },
+    {
+      "file": "31-review-round-4/",
+      "at": "2026-09-16T02:10:37.656529+00:00",
+      "session": "review",
+      "shows": "20-case regression, local authoring bundle with live actions. 14 complete replies, 3 partial replies, 3 preview escalation events; no human receipt verified. See SCORE.md and execution-evidence.json."
+    },
+    {
+      "file": "24-twenty-questions/execution-evidence.json; 26-twenty-questions-round-2/execution-evidence.json; 28-twenty-questions-round-3/execution-evidence.json",
+      "at": "2026-09-16T02:10:37.657242+00:00",
+      "session": "review",
+      "shows": "Allowlisted evidence extracted from retained original local traces. Corrects 33/33 claim: 12+13+13 calls, with q02 missing in round one. Original transcripts unchanged."
     }
   ]
 }

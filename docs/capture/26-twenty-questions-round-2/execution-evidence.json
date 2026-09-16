@@ -1,0 +1,662 @@
+{
+  "scope": "Synthetic authoring-bundle preview; human receipt is NOT verified.",
+  "cases": [
+    {
+      "id": "q01-status-both-given",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "order_status"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2041",
+                "customerEmail": "p.raman@whitcombe-academy.example"
+              },
+              "output": {
+                "calibrationCertificate": "Not applicable",
+                "carrier": "DPD",
+                "expectedDelivery": "16/09/2026",
+                "found": true,
+                "fulfilmentStatus": "Dispatched",
+                "itemsSummary": "24 x 250ml borosilicate beakers, 12 x 100ml measuring cylinders",
+                "message": "",
+                "orderDate": "08/09/2026",
+                "orderReference": "NI-2041",
+                "trackingNumber": "15501234567890"
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q02-status-two-turns",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "order_status"
+          ],
+          "reachedHumanNode": false,
+          "actions": [],
+          "evaluatorVerdict": "UNRESOLVED\n\nThe user asked for order status, but the agent only requested the email address without proceeding to check the status. No action was taken to resolve the user's intent."
+        },
+        {
+          "path": [
+            "agent_router",
+            "order_status"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2048",
+                "customerEmail": "lowri.evans@dunmoreceramics.example"
+              },
+              "output": {
+                "calibrationCertificate": "Not applicable",
+                "carrier": "",
+                "expectedDelivery": "19/09/2026",
+                "found": true,
+                "fulfilmentStatus": "Processing",
+                "itemsSummary": "2 x crucible tongs, 20 x porcelain crucibles 30ml",
+                "message": "",
+                "orderDate": "12/09/2026",
+                "orderReference": "NI-2048",
+                "trackingNumber": ""
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        [],
+        []
+      ]
+    },
+    {
+      "id": "q03-awaiting-stock",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "order_status"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2044",
+                "customerEmail": "sam@brightwellbrewing.example"
+              },
+              "output": {
+                "calibrationCertificate": "Not applicable",
+                "carrier": "",
+                "expectedDelivery": "",
+                "found": true,
+                "fulfilmentStatus": "Awaiting stock",
+                "itemsSummary": "1 x refractometer 0-32 Brix, 6 x hydrometer",
+                "message": "",
+                "orderDate": "10/09/2026",
+                "orderReference": "NI-2044",
+                "trackingNumber": ""
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q04-delivered",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "order_status"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2043",
+                "customerEmail": "derek@penninewater.example"
+              },
+              "output": {
+                "calibrationCertificate": "Not applicable",
+                "carrier": "Royal Mail",
+                "expectedDelivery": "05/09/2026",
+                "found": true,
+                "fulfilmentStatus": "Delivered",
+                "itemsSummary": "50 x sample bottles 1L, 2 x turbidity standards",
+                "message": "",
+                "orderDate": "02/09/2026",
+                "orderReference": "NI-2043",
+                "trackingNumber": "RM0982374651GB"
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q05-cancelled",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "order_status"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2047",
+                "customerEmail": "ian@moorsidesoil.example"
+              },
+              "output": {
+                "calibrationCertificate": "Not applicable",
+                "carrier": "",
+                "expectedDelivery": "",
+                "found": true,
+                "fulfilmentStatus": "Cancelled",
+                "itemsSummary": "1 x soil sieve set 8 pieces",
+                "message": "",
+                "orderDate": "28/08/2026",
+                "orderReference": "NI-2047",
+                "trackingNumber": ""
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q06-wrong-email",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "order_status"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2041",
+                "customerEmail": "someone@else.example"
+              },
+              "output": {
+                "found": false,
+                "message": "I could not find an order with the reference NI-2041 under that email address. Please check both against your confirmation email."
+              }
+            }
+          ],
+          "evaluatorVerdict": "PARTIALLY_RESOLVED\n\nUser asked to locate order NI-2041. Agent used tool to search but found no order, offered to retry or speak to a person. Intent partially resolved; no order found and no escalation or alternative provided."
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q07-unknown-reference",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "order_status"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-9999",
+                "customerEmail": "p.raman@whitcombe-academy.example"
+              },
+              "output": {
+                "found": false,
+                "message": "I could not find an order with the reference NI-9999. Please check it against your confirmation email."
+              }
+            }
+          ],
+          "evaluatorVerdict": "PARTIALLY_RESOLVED\n\nThe agent confirmed the order was not found and offered to retry or speak to a person, but did not resolve the user's request to check the order status. The intent to check order status remains unresolved."
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q08-sloppy-reference",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "order_status"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2046",
+                "customerEmail": "abello@hartfield.example"
+              },
+              "output": {
+                "calibrationCertificate": "Not applicable",
+                "carrier": "Royal Mail",
+                "expectedDelivery": "15/09/2026",
+                "found": true,
+                "fulfilmentStatus": "Dispatched",
+                "itemsSummary": "40 x safety goggles, 10 x boxes nitrile gloves M",
+                "message": "",
+                "orderDate": "11/09/2026",
+                "orderReference": "NI-2046",
+                "trackingNumber": "RM1122334455GB"
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q09-tracking-number",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "delivery_tracking"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2051",
+                "customerEmail": "derek@penninewater.example"
+              },
+              "output": {
+                "calibrationCertificate": "Not applicable",
+                "carrier": "DPD",
+                "expectedDelivery": "16/09/2026",
+                "found": true,
+                "fulfilmentStatus": "Dispatched",
+                "itemsSummary": "100 x sample bottles 500ml",
+                "message": "",
+                "orderDate": "14/09/2026",
+                "orderReference": "NI-2051",
+                "trackingNumber": "15507777888899"
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q10-tracking-not-yet",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "delivery_tracking"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2049",
+                "customerEmail": "t.ashworth@whitcombe-academy.example"
+              },
+              "output": {
+                "calibrationCertificate": "Not applicable",
+                "carrier": "",
+                "expectedDelivery": "17/09/2026",
+                "found": true,
+                "fulfilmentStatus": "Processing",
+                "itemsSummary": "5 x 1L volumetric flasks, 1 x retort stand",
+                "message": "",
+                "orderDate": "13/09/2026",
+                "orderReference": "NI-2049",
+                "trackingNumber": ""
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q11-late-parcel",
+      "complete": true,
+      "expected": "escalated",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "delivery_tracking"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2046",
+                "customerEmail": "abello@hartfield.example"
+              },
+              "output": {
+                "calibrationCertificate": "Not applicable",
+                "carrier": "Royal Mail",
+                "expectedDelivery": "15/09/2026",
+                "found": true,
+                "fulfilmentStatus": "Dispatched",
+                "itemsSummary": "40 x safety goggles, 10 x boxes nitrile gloves M",
+                "message": "",
+                "orderDate": "11/09/2026",
+                "orderReference": "NI-2046",
+                "trackingNumber": "RM1122334455GB"
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        },
+        {
+          "path": [
+            "agent_router",
+            "escalation",
+            "__human__"
+          ],
+          "reachedHumanNode": true,
+          "actions": [],
+          "evaluatorVerdict": null
+        }
+      ],
+      "responseEvents": [
+        [],
+        [
+          {
+            "type": "Escalate",
+            "targets": []
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q12-returns-unopened",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "returns_and_refund_process"
+          ],
+          "reachedHumanNode": false,
+          "actions": [],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q13-returns-opened",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "returns_and_refund_process"
+          ],
+          "reachedHumanNode": false,
+          "actions": [],
+          "evaluatorVerdict": "PARTIALLY_RESOLVED\n\nUser wanted to return gloves due to wrong size. Agent offered escalation to a person but did not complete return process or provide next steps. Intent partially resolved."
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q14-faulty-item",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "returns_and_refund_process"
+          ],
+          "reachedHumanNode": false,
+          "actions": [],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q15-cert-general",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "calibration_paperwork_requests"
+          ],
+          "reachedHumanNode": false,
+          "actions": [],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q16-cert-pending",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "calibration_paperwork_requests"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2050",
+                "customerEmail": "h.lindqvist@stalbans-sfc.example"
+              },
+              "output": {
+                "calibrationCertificate": "Pending",
+                "carrier": "DPD",
+                "expectedDelivery": "03/09/2026",
+                "found": true,
+                "fulfilmentStatus": "Delivered",
+                "itemsSummary": "1 x digital thermometer -50 to 300C (calibrated)",
+                "message": "",
+                "orderDate": "01/09/2026",
+                "orderReference": "NI-2050",
+                "trackingNumber": "15505555666677"
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q17-cert-issued",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "calibration_paperwork_requests"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "input": {
+                "orderReference": "NI-2045",
+                "customerEmail": "f.macrae@kelsovetlab.example"
+              },
+              "output": {
+                "calibrationCertificate": "Issued",
+                "carrier": "DPD",
+                "expectedDelivery": "07/09/2026",
+                "found": true,
+                "fulfilmentStatus": "Delivered",
+                "itemsSummary": "1 x precision balance 0.001g (calibrated), 1 x set of check weights",
+                "message": "",
+                "orderDate": "04/09/2026",
+                "orderReference": "NI-2045",
+                "trackingNumber": "15509876543210"
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q18-recalibration-quote",
+      "complete": true,
+      "expected": "escalated",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "calibration_paperwork_requests",
+            "escalation",
+            "__human__"
+          ],
+          "reachedHumanNode": true,
+          "actions": [],
+          "evaluatorVerdict": null
+        }
+      ],
+      "responseEvents": [
+        [
+          {
+            "type": "Escalate",
+            "targets": []
+          }
+        ]
+      ]
+    },
+    {
+      "id": "q19-wants-a-person",
+      "complete": true,
+      "expected": "escalated",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "escalation"
+          ],
+          "reachedHumanNode": false,
+          "actions": [],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q20-off-topic",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "off_topic"
+          ],
+          "reachedHumanNode": false,
+          "actions": [],
+          "evaluatorVerdict": "UNRESOLVED\n\nUser asked a general knowledge question (capital of Peru), which is off-topic. Agent redirected to its domain but did not provide the answer or a clear alternative, leaving the user's query unresolved."
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    }
+  ]
+}

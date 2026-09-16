@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "9f7660ad-1546-49a9-a01b-14748dcce5cc",
+   "metrics": {},
+   "feedbackId": "f69c1845-7156-4b05-af69-d051bd33eafc",
+   "planId": "f69c1845-7156-4b05-af69-d051bd33eafc",
+   "isContentSafe": true,
+   "message": "Your order NI-2046 was sent by Royal Mail and was due yesterday, 15/09/2026. The tracking number is RM1122334455GB—please check the live status on the Royal Mail tracking page using that number.\n\nSince it is now overdue, I can hand this to a person who will contact Royal Mail and keep you updated. Would you like me to do that?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "072d0a94-47fc-44f2-a2a0-47e7633ee3b5"
+}

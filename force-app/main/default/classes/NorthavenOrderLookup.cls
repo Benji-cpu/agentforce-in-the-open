@@ -86,7 +86,7 @@ public with sharing class NorthavenOrderLookup {
         ];
 
         if (orders.isEmpty()) {
-            r.message = 'I could not find an order with the reference ' + ref + '. Please check it against your confirmation email.';
+            r.message = 'I could not find an order with the reference ' + ref + ' under that email address. Please check both against your confirmation email.';
             return r;
         }
 

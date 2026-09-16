@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "8b6e32fc-af78-4325-927f-d741e2824dcb",
+   "metrics": {},
+   "feedbackId": "92d8cede-7635-48ee-9583-caf2a6bdb032",
+   "planId": "92d8cede-7635-48ee-9583-caf2a6bdb032",
+   "isContentSafe": true,
+   "message": "The calibration certificate for your balance on order NI-2045 was emailed to f.macrae@kelsovetlab.example within five working days of dispatch. If you cannot find it, please email calibration@northaven-instruments.example with your order reference and the instrument serial number, and a replacement will be sent free of charge.\n\nWould you like help with anything else?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "b4d74049-1aa9-4da1-bdb2-a73a3e8e6618"
+}

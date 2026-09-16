@@ -25,3 +25,13 @@ Across the three rounds the lookup action was called on every case that needed i
 33 turns), returned the right record every time, and never leaked a detail on a mismatched
 email. Every wrong answer in three rounds was the model narrating an action instead of
 taking it. None was a wrong fact.
+
+
+## Correction — 16 September 2026
+
+The historical paragraph above claiming 33 of 33 lookups is withdrawn. The exported execution
+evidence shows 12 / 13 / 13 calls across the three rounds (38 total; 32 found and six negative).
+Round-one q02 never called the lookup. The “roughly one attempt in three” wording is not a
+reliability estimate: different instructions were used between rounds. “Escalated” here means
+preview human-node entry, not human receipt. “No wrong facts” is withdrawn: a claim that an action
+happened is itself a factual claim. The original case scores are preserved as historical scores.
