@@ -1,0 +1,15 @@
+{
+  "siteUrl": "https://benji-cpu.github.io/agentforce-in-the-open/",
+  "postUrl": "https://www.linkedin.com/feed/update/urn:li:share:7506156712610009088/",
+  "publishedAt": "2026-09-17T01:07:49.755076+00:00",
+  "projectCommit": "9f463cb",
+  "agentVersion": 3,
+  "verification": [
+    "GitHub Pages HTTP200; all three evidence tabs and assets checked",
+    "LinkedIn Post successful notification and permanent post readback",
+    "Image and descriptive alt text verified",
+    "Comments enabled after detecting disabled default"
+  ],
+  "postText": "My support agent told a customer it was checking their order. No lookup had happened.\n\nI was building an Agentforce demo for a fictional lab-supplies shop. The agent\u2019s user was missing permission to run the lookup. The tool disappeared from the model\u2019s options, but the reply still said it was checking.\n\nThe conversation sounded fine. The execution trace showed the problem.\n\nI\u2019ve now finished the demonstration around that distinction: the agent looks up orders, reads published Knowledge articles and saves support requests to a Salesforce queue. A request gets a case number only after the record exists.\n\nYou can explore the recorded conversations with the evidence beside each answer. The source and test results are there too, including what still needs work before a customer rollout.\n\nThis brings together my Salesforce architecture background and the AI-agent work I\u2019ve been doing since. The question I keep coming back to is simple: what would the next person need to see to trust that the job was done?\n\nThe finished build: https://benji-cpu.github.io/agentforce-in-the-open/",
+  "scope": "Synthetic demonstration; recorded public replay, live Salesforce actions tested separately. No production reliability or lead outcome claimed."
+}
