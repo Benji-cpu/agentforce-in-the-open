@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "7aac234c-e544-4ebd-b948-114cd5c9bb9c",
+   "isContentSafe": true,
+   "message": "According to the fictional Northaven policy, opened consumables like nitrile gloves cannot be returned for safety reasons unless they are faulty or sent in error. If the gloves are unused and still in their unopened original packaging, you may return them within 30 days for a refund (not an exchange), but you would pay the return postage unless the item was sent in error.\n\nIf you believe the gloves were sent in error, I can help start a support request. Would you like to do that?",
+   "id": "a73f17f2-2b61-48e2-a547-008ed4cdb2c3",
+   "metrics": {},
+   "planId": "7aac234c-e544-4ebd-b948-114cd5c9bb9c",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa95-dc76-705d-9d95-ea1562231153"
+}

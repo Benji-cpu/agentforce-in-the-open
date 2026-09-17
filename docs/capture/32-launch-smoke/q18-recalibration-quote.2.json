@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "21602529-0dfc-44da-b608-fc55631143f6",
+   "metrics": {},
+   "feedbackId": "7b931494-1100-4366-9e41-88f0583211b2",
+   "planId": "7b931494-1100-4366-9e41-88f0583211b2",
+   "isContentSafe": true,
+   "message": "Your request for a quote on annual recalibration of your precision balance has been saved for follow-up. The case number is 00001026. No email was sent. Is there anything else I can help with today?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "4df2eef5-6ee7-440b-b03e-22ebbd8b08d8"
+}

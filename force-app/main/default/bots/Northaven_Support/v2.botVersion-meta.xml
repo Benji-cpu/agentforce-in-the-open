@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BotVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>v2</fullName>
+    <articleAnswersGPTEnabled>false</articleAnswersGPTEnabled>
+    <botDialogs>
+        <botSteps>
+            <botMessages>
+                <message>Northaven Instruments is a fictional demo. Hello! I can check where an order is, help with a return, or sort out calibration paperwork. How can I help?</message>
+                <messageIdentifier>a78b36ec-46ea-433a-9ad0-79f39911c438</messageIdentifier>
+            </botMessages>
+            <stepIdentifier>46290c7d-28ac-4fad-b784-19d44ce97e7a</stepIdentifier>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <stepIdentifier>2e8c3f25-d57a-4d5e-8915-393cf3bdff24</stepIdentifier>
+            <type>Wait</type>
+        </botSteps>
+        <developerName>Welcome</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Welcome</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <botDialogs>
+        <botSteps>
+            <botMessages>
+                <message>Sorry, something went wrong on my side. No request has been confirmed. This is a fictional demo; its email addresses do not deliver.</message>
+                <messageIdentifier>135f2e19-4bf6-4358-9b17-f5f0ec97218e</messageIdentifier>
+            </botMessages>
+            <stepIdentifier>9ad92905-f89b-4e3d-a071-d4d66bc7495b</stepIdentifier>
+            <type>Message</type>
+        </botSteps>
+        <botSteps>
+            <stepIdentifier>567f48fb-633d-4283-95d9-8a6913e2a57b</stepIdentifier>
+            <type>Wait</type>
+        </botSteps>
+        <developerName>Rich_Content_Error_Handling</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Error Handler</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <botDialogs>
+        <botSteps>
+            <conversationSystemMessage>
+                <type>Transfer</type>
+            </conversationSystemMessage>
+            <stepIdentifier>99e3be9b-5a60-4e4c-9be5-c9820e799d93</stepIdentifier>
+            <type>SystemMessage</type>
+        </botSteps>
+        <developerName>Transfer_To_Agent</developerName>
+        <isPlaceholderDialog>false</isPlaceholderDialog>
+        <label>Transfer To Agent</label>
+        <showInFooterMenu>false</showInFooterMenu>
+    </botDialogs>
+    <citationsEnabled>false</citationsEnabled>
+    <conversationDefinitionPlanners>
+        <genAiPlannerName>Northaven_Support_v2</genAiPlannerName>
+    </conversationDefinitionPlanners>
+    <conversationSystemDialogs>
+        <dialog>Rich_Content_Error_Handling</dialog>
+        <type>ErrorHandling</type>
+    </conversationSystemDialogs>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The canonical order reference, e.g. NI-2041, once verified</description>
+        <developerName>order_reference</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Order Reference</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>What is on the order, one line</description>
+        <developerName>items_summary</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Items Summary</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Carrier name once dispatched</description>
+        <developerName>carrier</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Carrier</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Text retrieved from the published calibration Knowledge article</description>
+        <developerName>calibration_policy</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Calibration Policy</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>Runtime condition evaluation for if statements</description>
+        <developerName>AgentScriptInternal_condition_1</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Runtime Condition 1</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Text retrieved from the published returns Knowledge article</description>
+        <developerName>returns_policy</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Returns Policy</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Expected delivery date as text</description>
+        <developerName>expected_delivery</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Expected Delivery</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Why the lookup found nothing, in words safe to read out</description>
+        <developerName>lookup_message</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Lookup Message</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The next topic to be visited</description>
+        <developerName>AgentScriptInternal_next_topic</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Next Topic</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Processing, Awaiting stock, Dispatched, Delivered or Cancelled</description>
+        <developerName>fulfilment_status</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Fulfilment Status</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Not applicable, Pending or Issued</description>
+        <developerName>calibration_certificate</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Calibration Certificate</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Date the order was placed, as text</description>
+        <developerName>order_date</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Order Date</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>True once look_up_order has matched a reference and an email</description>
+        <developerName>order_found</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Order Found</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Case number returned by successful support-request creation</description>
+        <developerName>support_case_number</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Support Case Number</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The agent instructions</description>
+        <developerName>AgentScriptInternal_agent_instructions</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Agent Instructions</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Carrier tracking number once dispatched</description>
+        <developerName>tracking_number</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Tracking Number</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <copilotPrimaryLanguage>en_US</copilotPrimaryLanguage>
+    <defaultStdObjForContactIdFltrEnabled>false</defaultStdObjForContactIdFltrEnabled>
+    <entryDialog>Welcome</entryDialog>
+    <intentDisambiguationEnabled>false</intentDisambiguationEnabled>
+    <intentV3Enabled>false</intentV3Enabled>
+    <isScriptCompatibleAgent>true</isScriptCompatibleAgent>
+    <knowledgeActionEnabled>false</knowledgeActionEnabled>
+    <knowledgeFallbackEnabled>false</knowledgeFallbackEnabled>
+    <smallTalkEnabled>false</smallTalkEnabled>
+    <staticPromptsEnabled>false</staticPromptsEnabled>
+    <stopRecPrompts>false</stopRecPrompts>
+    <stopWelcomePrompts>false</stopWelcomePrompts>
+    <surfacesEnabled>false</surfacesEnabled>
+    <toneType>Casual</toneType>
+</BotVersion>

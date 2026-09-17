@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "027972fa-b52d-4f46-a68d-5b06f1cafd41",
+   "isContentSafe": true,
+   "message": "Your support request is saved as case number 00001028. Someone will review and follow up with Royal Mail about your delayed order. No email was sent. Is there anything else you need help with?",
+   "id": "2dcacaae-b199-448d-ac9d-39b2b97b8805",
+   "metrics": {},
+   "planId": "027972fa-b52d-4f46-a68d-5b06f1cafd41",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa93-d905-7367-9793-eb7d74473cdc"
+}

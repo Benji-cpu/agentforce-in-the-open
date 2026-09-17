@@ -1,0 +1,124 @@
+{
+  "metrics": {
+    "cases": 25,
+    "tests": 9,
+    "requests": 7,
+    "note": "25 distinct scenarios exercised across published-agent runs, with failures retained and targeted fixes retested. These are development checks, not a production success rate. The report distinguishes published responses from local execution traces."
+  },
+  "report": "https://github.com/Benji-cpu/agentforce-in-the-open/blob/main/docs/ACCEPTANCE.md",
+  "examples": {
+    "order": {
+      "messages": [
+        {
+          "role": "customer",
+          "text": "Hi, where is my order NI-2041? My email is p.raman@whitcombe-academy.example"
+        },
+        {
+          "role": "agent",
+          "text": "Order NI-2041, placed on 08/09/2026 for 24 x 250ml borosilicate beakers and 12 x 100ml measuring cylinders, is marked as Dispatched. It was sent with DPD, tracking number 15501234567890, and the expected delivery date was 16/09/2026.\n\nWould you like help tracking this parcel, or is there anything else I can check for you?"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Action executed",
+          "value": "NorthavenOrderLookup"
+        },
+        {
+          "label": "Matched record",
+          "value": "NI-2041"
+        },
+        {
+          "label": "Status returned",
+          "value": "Dispatched"
+        },
+        {
+          "label": "Tracking returned",
+          "value": "DPD · 15501234567890"
+        },
+        {
+          "label": "Access boundary",
+          "value": "Details returned after reference and email matched. This is a demo check, not authentication."
+        }
+      ],
+      "source": "https://github.com/Benji-cpu/agentforce-in-the-open/blob/main/docs/capture/39-v3-live-action-examples/q01-status-both-given.md"
+    },
+    "policy": {
+      "messages": [
+        {
+          "role": "customer",
+          "text": "Can I return some beakers I ordered three weeks ago? They're still in the box, unopened."
+        },
+        {
+          "role": "agent",
+          "text": "According to the fictional Northaven policy, you can return unused beakers in unopened original packaging within 30 days of delivery for a refund of the goods. You would need to pay the return postage unless the items are faulty or sent in error. To start a return, email returns@northaven-instruments.example with your order reference and reason. You will then receive a returns number and label within one working day.\n\nWould you like help starting this return process?"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Action executed",
+          "value": "NorthavenPolicyLookup"
+        },
+        {
+          "label": "Source retrieved",
+          "value": "Northaven demo: returns and refunds"
+        },
+        {
+          "label": "Publication state",
+          "value": "Online · Salesforce Knowledge"
+        },
+        {
+          "label": "Rule in the source",
+          "value": "Synthetic policy, version 1, 16 September 2026. Unused items in unopened original packaging may be returned within 30 days of delivery for a refund of the goods. Customer pays return postage unless faulty or sent in error. Opened glassware, consumables and sterile items cannot be returned for safety, unless faulty or sent in error. Faulty or damaged items are covered for 12 months: replace or refund and Northaven pays return postage; photograph damage before packing. A broken calibration seal incurs a GBP45 recalibration fee. To start a return, email returns@northaven-instruments.example with reference and reason; a returns number and label follow within one working day. Refunds are normally processed within five working days of receipt. These are policy timelines, not evidence that a refund was issued. All email addresses are fictional and do not deliver."
+        },
+        {
+          "label": "Retrieval method",
+          "value": "Exact topic lookup. The reply is based on a published article."
+        }
+      ],
+      "source": "https://github.com/Benji-cpu/agentforce-in-the-open/blob/main/docs/capture/39-v3-live-action-examples/q12-returns-unopened.md"
+    },
+    "support": {
+      "messages": [
+        {
+          "role": "customer",
+          "text": "We need our precision balance recalibrated every year. How much does that cost?"
+        },
+        {
+          "role": "agent",
+          "text": "We do not have a set price for annual recalibration. Each instrument needs a personalised quote. I can have the team contact you with a quote. Please provide your email address, and if possible, the make and model of your precision balance. If you do not know the details, that is fine—the team can ask later. Would you like to proceed?"
+        },
+        {
+          "role": "customer",
+          "text": "Use f.macrae@kelsovetlab.example for the quote request."
+        },
+        {
+          "role": "agent",
+          "text": "Your request for a quote on annual recalibration of your precision balance has been saved for the team. The case number is 00001032. No email was sent. The team may contact you at f.macrae@kelsovetlab.example for more details if needed.\n\nIs there anything else I can help with today?"
+        }
+      ],
+      "evidence": [
+        {
+          "label": "Action executed",
+          "value": "NorthavenSupportRequest"
+        },
+        {
+          "label": "Case read back from Salesforce",
+          "value": "00001032"
+        },
+        {
+          "label": "Owner verified",
+          "value": "Northaven Support — Demo"
+        },
+        {
+          "label": "Context saved",
+          "value": "Synthetic Agentforce demonstration.\n\nCustomer context:\nCustomer requests a quote for annual recalibration of a precision balance. Make, model, and serial number not provided; team may need to ask for these details."
+        },
+        {
+          "label": "What this means",
+          "value": "A request is saved for later review. No live chat transfer or email-sent claim."
+        }
+      ],
+      "source": "https://github.com/Benji-cpu/agentforce-in-the-open/blob/main/docs/capture/39-v3-live-action-examples/q18-recalibration-quote.md"
+    }
+  }
+}

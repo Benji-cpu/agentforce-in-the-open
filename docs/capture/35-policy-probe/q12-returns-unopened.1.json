@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "5223ab85-76a7-4da3-b98d-8302febb3716",
+   "metrics": {},
+   "feedbackId": "0d991825-004b-465c-92ad-7d3086d98f94",
+   "planId": "0d991825-004b-465c-92ad-7d3086d98f94",
+   "isContentSafe": true,
+   "message": "I am unable to confirm the returns policy right now, so I cannot say for sure if your order qualifies for a return. Would you like me to create a support request for this?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "e013f01d-7836-4968-9c85-1babb21ca200"
+}

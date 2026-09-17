@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "f6f86127-3763-4dd0-9cad-87e762141040",
+   "isContentSafe": true,
+   "message": "According to our fictional policy, if your pH meter was marked as calibrated on your order, it includes a UKAS-traceable PDF calibration certificate. This certificate is usually emailed within five working days of dispatch and is not placed in the box. The certificate is valid for 12 months from the calibration date.\n\nIf you lose your certificate within those 12 months, you can request a free reissue by emailing calibration@northaven-instruments.example with your order reference and the instrument serial number. (This address is fictional for demonstration.)\n\nIf you want to check whether your certificate has been issued, please provide your order reference and the email used for the order. Would you like to check the status or need help with something else?",
+   "id": "b14b987d-5cc7-480b-8e51-d7b37fdf6d9b",
+   "metrics": {},
+   "planId": "f6f86127-3763-4dd0-9cad-87e762141040",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa94-ef25-7483-9735-ddce6e203d58"
+}

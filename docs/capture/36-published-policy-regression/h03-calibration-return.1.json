@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "5022da30-f125-4f04-ac23-963146842c4a",
+   "isContentSafe": true,
+   "message": "According to the fictional Northaven Instruments returns policy, breaking the calibration seal means a GBP45 recalibration fee applies if you return the instrument. You would also pay return postage unless the item is faulty or sent in error. If you want to start a return, you would email returns@northaven-instruments.example with your reference and reason.\n\nIs there anything else I can help with about your order or the return process?",
+   "id": "312eda35-6fc9-4070-900f-22d4964859b4",
+   "metrics": {},
+   "planId": "5022da30-f125-4f04-ac23-963146842c4a",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa96-0ba3-766c-a3ab-f24926f8a177"
+}

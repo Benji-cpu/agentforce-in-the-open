@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "71558b2e-fb3a-4c21-bb28-fec38dddbbc4",
+   "isContentSafe": true,
+   "message": "Annual recalibration quotes are given per instrument by a person, and I am not allowed to give a price. I can save a support request for a quote. Could you give me your reply email and the balance’s details (make, model, serial number) so I can arrange this?",
+   "id": "7f89959d-b679-41c3-8e12-eae6ba1ac759",
+   "metrics": {},
+   "planId": "71558b2e-fb3a-4c21-bb28-fec38dddbbc4",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa95-ab31-7fc3-9bd3-39e3e3041dfc"
+}

@@ -1,0 +1,136 @@
+{
+  "scope": "Synthetic authoring-bundle preview; human receipt is NOT verified.",
+  "cases": [
+    {
+      "id": "q01-status-both-given",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "order_status"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "look_up_order",
+              "errors": [],
+              "input": {
+                "orderReference": "NI-2041",
+                "customerEmail": "p.raman@whitcombe-academy.example"
+              },
+              "output": {
+                "calibrationCertificate": "Not applicable",
+                "carrier": "DPD",
+                "expectedDelivery": "16/09/2026",
+                "found": true,
+                "fulfilmentStatus": "Dispatched",
+                "itemsSummary": "24 x 250ml borosilicate beakers, 12 x 100ml measuring cylinders",
+                "message": "",
+                "orderDate": "08/09/2026",
+                "orderReference": "NI-2041",
+                "trackingNumber": "15501234567890"
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q12-returns-unopened",
+      "complete": true,
+      "expected": "answered",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "returns_and_refund_process"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "read_policy",
+              "errors": [],
+              "input": {
+                "topic": "returns"
+              },
+              "output": {
+                "articleId": "kA0aj000002RwA1CAK",
+                "found": true,
+                "policyText": "Synthetic policy, version 1, 16 September 2026. Unused items in unopened original packaging may be returned within 30 days of delivery for a refund of the goods. Customer pays return postage unless faulty or sent in error. Opened glassware, consumables and sterile items cannot be returned for safety, unless faulty or sent in error. Faulty or damaged items are covered for 12 months: replace or refund and Northaven pays return postage; photograph damage before packing. A broken calibration seal incurs a GBP45 recalibration fee. To start a return, email returns@northaven-instruments.example with reference and reason; a returns number and label follow within one working day. Refunds are normally processed within five working days of receipt. These are policy timelines, not evidence that a refund was issued. All email addresses are fictional and do not deliver.",
+                "title": "Northaven demo: returns and refunds"
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        }
+      ],
+      "responseEvents": [
+        []
+      ]
+    },
+    {
+      "id": "q18-recalibration-quote",
+      "complete": true,
+      "expected": "case-created",
+      "turns": [
+        {
+          "path": [
+            "agent_router",
+            "calibration_paperwork_requests",
+            "escalation"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "read_policy",
+              "errors": [],
+              "input": {
+                "topic": "calibration"
+              },
+              "output": {
+                "articleId": "kA0aj000002RwA2CAK",
+                "found": true,
+                "policyText": "Synthetic policy, version 1, 16 September 2026. Instruments marked calibrated on an order include a UKAS-traceable PDF calibration certificate, normally emailed within five working days of dispatch, not placed in the box. Valid for 12 months from the calibration date. A lost certificate is reissued free within those 12 months: email calibration@northaven-instruments.example with the order reference and instrument serial number. The address is fictional. Issued status proves the certificate was issued; it does not prove email delivery or its date. Annual recalibration needs a person to quote per instrument. Create a support request for a quote, with the customer's email and instrument details; do not invent a price.",
+                "title": "Northaven demo: calibration certificates"
+              }
+            }
+          ],
+          "evaluatorVerdict": "FULLY_RESOLVED\n\nUser task was correctly identified and fully resolved"
+        },
+        {
+          "path": [
+            "agent_router",
+            "escalation"
+          ],
+          "reachedHumanNode": false,
+          "actions": [
+            {
+              "name": "create_request",
+              "errors": [],
+              "input": {
+                "customerEmail": "f.macrae@kelsovetlab.example",
+                "summary": "Customer requests a quote for annual recalibration of a precision balance. Please provide pricing details. No balance model or serial number was supplied yet."
+              },
+              "output": {
+                "caseNumber": "00001030",
+                "created": true,
+                "message": "Support request 00001030 is saved in the Northaven demo support queue. This is an asynchronous request, not a live chat transfer. No email was sent."
+              }
+            }
+          ],
+          "evaluatorVerdict": null
+        }
+      ],
+      "responseEvents": [
+        [],
+        []
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "78a235a6-184c-4403-aa5b-fdeebdf1389b",
+   "isContentSafe": true,
+   "message": "Order NI-2047 for 1 soil sieve set (8 pieces) is recorded as cancelled. I cannot confirm a payment or refund from this lookup. Would you like me to raise a support request to have your refund checked?",
+   "id": "727006bc-4048-4068-bfa3-1322a1331f08",
+   "metrics": {},
+   "planId": "78a235a6-184c-4403-aa5b-fdeebdf1389b",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa92-71f0-78f2-8d69-d2d1021b592c"
+}

@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "ded897c2-e0bf-4ce5-86ff-a02f862550f4",
+   "isContentSafe": true,
+   "message": "The calibration certificate for order NI-2050 (1 x digital thermometer -50 to 300C, calibrated) is still pending and has not been issued yet. Certificates are normally emailed within five working days of dispatch. This is a fictional policy for demonstration.\n\nIs there anything else I can help with regarding this order or another?",
+   "id": "90f121c2-f7a8-43a3-b2b8-f5ced8daf453",
+   "metrics": {},
+   "planId": "ded897c2-e0bf-4ce5-86ff-a02f862550f4",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa95-2a87-7761-bc0c-01cedaeaa5a4"
+}

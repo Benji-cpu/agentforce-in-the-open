@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "190cdf95-5ac2-4752-bc98-e08b295d76ba",
+   "metrics": {},
+   "feedbackId": "5f8a9887-a1f9-4dbe-9ba7-c8a6e31ec808",
+   "planId": "5f8a9887-a1f9-4dbe-9ba7-c8a6e31ec808",
+   "isContentSafe": true,
+   "message": "Your request for a precision balance recalibration quote is saved as case 00001030. No email was sent, but someone will review your request and reply to f.macrae@kelsovetlab.example. If you have the balance model or serial number, sharing it can help speed up your quote. Is there anything else I can help with today?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "eaa7e1e1-a107-4497-8e51-ad676d74f6f4"
+}

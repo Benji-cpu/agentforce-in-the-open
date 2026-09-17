@@ -1,0 +1,18 @@
+{
+  "totalCases": 25,
+  "publicSummary": "25 distinct scenarios exercised across published-agent runs, with failures retained and targeted fixes retested. These are development checks, not a production success rate. The report distinguishes published responses from local execution traces.",
+  "initialRun": {
+    "version": 2,
+    "scenarios": 25,
+    "policyAccessFailures": [
+      "q12",
+      "q13",
+      "h03"
+    ],
+    "uncompletedRequest": [
+      "q18"
+    ]
+  },
+  "finalVersion": 3,
+  "coverage": "Published v2: 20 development + 5 additional held-out cases. After Knowledge permission fix: q12, q13, h03. Published v3: order, returns, recalibration request targeted regression."
+}

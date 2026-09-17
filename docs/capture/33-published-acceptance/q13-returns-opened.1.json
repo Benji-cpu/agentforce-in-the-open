@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "cdce28d9-4ab8-46c5-846e-4d1b98479ee6",
+   "isContentSafe": true,
+   "message": "I need to check our returns policy before I can answer. There was a problem getting the latest information just now. Would you like me to raise a support request so someone can look into your return?",
+   "id": "a224a2d4-3ea3-41ce-b6ce-37acc71afb59",
+   "metrics": {},
+   "planId": "cdce28d9-4ab8-46c5-846e-4d1b98479ee6",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa94-78bd-7094-9f5e-ff289be12a4d"
+}

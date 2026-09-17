@@ -1,0 +1,26 @@
+[
+  {
+    "id": "q12-returns-unopened",
+    "expect": "answered",
+    "correct": "Yes within 30 days of delivery, customer pays postage, email returns@ with reference and reason",
+    "turns": [
+      "Can I return some beakers I ordered three weeks ago? They're still in the box, unopened."
+    ]
+  },
+  {
+    "id": "q13-returns-opened",
+    "expect": "answered",
+    "correct": "No: opened consumables cannot be returned, for safety",
+    "turns": [
+      "I opened a box of nitrile gloves and they're the wrong size. Can I send them back for a different size?"
+    ]
+  },
+  {
+    "id": "h03-calibration-return",
+    "expect": "answered",
+    "correct": "Retrieves published returns policy; within 30 days, broken calibration seal incurs GBP45 fee; synthetic policy identified.",
+    "turns": [
+      "My calibrated instrument arrived 10 days ago. I broke the calibration seal. What would a return cost?"
+    ]
+  }
+]

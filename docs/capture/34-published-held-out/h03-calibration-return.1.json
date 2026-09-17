@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "5a99386a-8d1c-4ed7-8674-1e517a615cf9",
+   "isContentSafe": true,
+   "message": "I cannot see the current return policy right now, so I do not know what a return would cost if the calibration seal is broken. Would you like me to open a support request for you to get a clear answer from the team?",
+   "id": "8488ae1a-b4bd-4a4b-97ca-4b2707533cba",
+   "metrics": {},
+   "planId": "5a99386a-8d1c-4ed7-8674-1e517a615cf9",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa92-737f-7f2b-b45c-c387873b12c3"
+}

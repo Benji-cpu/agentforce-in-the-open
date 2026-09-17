@@ -1,0 +1,8 @@
+{
+  "bundle": "Northaven_Support",
+  "org": "agentforce-de",
+  "published": true,
+  "simulate": false,
+  "casesPath": "tests/held-out-questions.json",
+  "startedAt": "2026-09-16T14:14:40.193Z"
+}

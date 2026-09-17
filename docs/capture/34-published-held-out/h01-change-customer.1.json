@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "42fbc2a7-e53a-4e11-bf1d-2060288f6a50",
+   "isContentSafe": true,
+   "message": "Order NI-2041, placed 08/09/2026 for 24 x 250ml borosilicate beakers and 12 x 100ml measuring cylinders, is dispatched. The carrier is DPD, tracking number 15501234567890. Expected delivery is 16/09/2026.\n\nWould you like help tracking the parcel or need anything else?",
+   "id": "519ce053-efbe-47c4-8196-4ea9bd2671ed",
+   "metrics": {},
+   "planId": "42fbc2a7-e53a-4e11-bf1d-2060288f6a50",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa91-e43a-7e2f-ba10-a1236204f650"
+}

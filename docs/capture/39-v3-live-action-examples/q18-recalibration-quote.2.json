@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "10165b38-ca8d-48f5-9234-d2d0476cbe23",
+   "metrics": {},
+   "feedbackId": "50bf9e5d-229d-43a2-a5b0-3e8926d0dc65",
+   "planId": "50bf9e5d-229d-43a2-a5b0-3e8926d0dc65",
+   "isContentSafe": true,
+   "message": "Your request for a quote on annual recalibration of your precision balance has been saved for the team. The case number is 00001032. No email was sent. The team may contact you at f.macrae@kelsovetlab.example for more details if needed.\n\nIs there anything else I can help with today?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "e5fdbc3f-1009-446e-a173-c515cf1bfcea"
+}

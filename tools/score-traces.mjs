@@ -7,18 +7,22 @@ import { extractEvidence } from './trace-evidence.mjs';
 const dir = process.argv[2];
 if (!dir) throw new Error('Usage: node tools/score-traces.mjs <run-directory> [--export]');
 const bundle = process.env.BUNDLE || 'Northaven_Support';
-const cases = JSON.parse(readFileSync('tests/twenty-questions.json', 'utf8'));
-const report = { scope: 'Synthetic authoring-bundle preview; human receipt is NOT verified.', cases: [] };
+const configPath = join(dir, 'run-config.json');
+const config = existsSync(configPath) ? JSON.parse(readFileSync(configPath, 'utf8')) : {};
+const cases = JSON.parse(readFileSync(process.env.CASES || config.casesPath || 'tests/twenty-questions.json', 'utf8'));
+const report = { scope: config.published ? 'Synthetic activated-agent run; Case persistence checked separately.' : 'Synthetic authoring-bundle preview; human receipt is NOT verified.', cases: [] };
 let missing = false;
 for (const c of cases) {
   const file = join(dir, `${c.id}.md`);
   const text = existsSync(file) ? readFileSync(file, 'utf8') : '';
   const session = text.match(/_session ([0-9a-f-]+)_/)?.[1];
-  const tdir = join('.sfdx', 'agents', bundle, 'sessions', session || 'none', 'traces');
+  const roots = readdirSync(join('.sfdx','agents'), {withFileTypes:true}).filter(d=>d.isDirectory()).map(d=>d.name);
+  const traceRoot = roots.find(root=>existsSync(join('.sfdx','agents',root,'sessions',session||'none','traces'))) || bundle;
+  const tdir = join('.sfdx', 'agents', traceRoot, 'sessions', session || 'none', 'traces');
   const files = existsSync(tdir) ? readdirSync(tdir).filter(f => f.endsWith('.json')) : [];
   const traces = files.map(f => JSON.parse(readFileSync(join(tdir, f), 'utf8')))
     .sort((a, b) => (a.plan?.[0]?.startExecutionTime || 0) - (b.plan?.[0]?.startExecutionTime || 0));
-  const turns = traces.map(extractEvidence);
+  const turns = traces.filter(t=>Array.isArray(t.plan) && t.plan.length).map(extractEvidence);
   const complete = turns.length === c.turns.length && !text.includes('**ERROR:**');
   missing ||= !complete;
   const responseEvents = c.turns.map((_, i) => {

@@ -1,0 +1,166 @@
+[
+  {
+    "id": "q01-status-both-given",
+    "expect": "answered",
+    "correct": "Dispatched, DPD, tracking 15501234567890, expected 16 Sep 2026",
+    "turns": [
+      "Hi, where is my order NI-2041? My email is p.raman@whitcombe-academy.example"
+    ]
+  },
+  {
+    "id": "q02-status-two-turns",
+    "expect": "answered",
+    "correct": "Asks for email, then: Processing, expected 19 Sep 2026",
+    "turns": [
+      "Can you tell me the status of order NI-2048 please",
+      "lowri.evans@dunmoreceramics.example"
+    ]
+  },
+  {
+    "id": "q03-awaiting-stock",
+    "expect": "answered",
+    "correct": "Awaiting stock, no date, warehouse emails on dispatch, offers a person",
+    "turns": [
+      "Order NI-2044, email sam@brightwellbrewing.example - has it shipped yet?"
+    ]
+  },
+  {
+    "id": "q04-delivered",
+    "expect": "answered",
+    "correct": "Record is marked Delivered; actual delivery timestamp unavailable; expected date must not be called actual delivery.",
+    "turns": [
+      "derek@penninewater.example here, checking NI-2043"
+    ]
+  },
+  {
+    "id": "q05-cancelled",
+    "expect": "answered",
+    "correct": "Cancelled; does not confirm payment or refund; offers support request.",
+    "turns": [
+      "What happened to my order NI-2047? ian@moorsidesoil.example"
+    ]
+  },
+  {
+    "id": "q06-wrong-email",
+    "expect": "answered",
+    "correct": "Not found under that email; no status or tracking leaked",
+    "turns": [
+      "Where's NI-2041? My email is someone@else.example"
+    ]
+  },
+  {
+    "id": "q07-unknown-reference",
+    "expect": "answered",
+    "correct": "Not found; asks to check the confirmation email",
+    "turns": [
+      "Status of NI-9999 please, p.raman@whitcombe-academy.example"
+    ]
+  },
+  {
+    "id": "q08-sloppy-reference",
+    "expect": "answered",
+    "correct": "Normalises ni2046: Dispatched, Royal Mail, RM1122334455GB, 15 Sep 2026",
+    "turns": [
+      "hi its abello@hartfield.example, order ni2046, where is it"
+    ]
+  },
+  {
+    "id": "q09-tracking-number",
+    "expect": "answered",
+    "correct": "DPD, 15507777888899, expected 16 Sep 2026, use the carrier's tracking page",
+    "turns": [
+      "What's the tracking number for NI-2051? derek@penninewater.example"
+    ]
+  },
+  {
+    "id": "q10-tracking-not-yet",
+    "expect": "answered",
+    "correct": "No tracking yet: Processing, dispatch within two working days, expected 17 Sep 2026",
+    "turns": [
+      "I need the courier tracking for order NI-2049, t.ashworth@whitcombe-academy.example"
+    ]
+  },
+  {
+    "id": "q11-late-parcel",
+    "expect": "case-created",
+    "correct": "Persists case with email abello@hartfield.example, order NI-2046 and carrier-investigation context; confirms returned case number, no live chat.",
+    "turns": [
+      "NI-2046, abello@hartfield.example. It was supposed to arrive today and nothing has come. What's going on?",
+      "Yes please, get someone to chase it"
+    ]
+  },
+  {
+    "id": "q12-returns-unopened",
+    "expect": "answered",
+    "correct": "Yes within 30 days of delivery, customer pays postage, email returns@ with reference and reason",
+    "turns": [
+      "Can I return some beakers I ordered three weeks ago? They're still in the box, unopened."
+    ]
+  },
+  {
+    "id": "q13-returns-opened",
+    "expect": "answered",
+    "correct": "No: opened consumables cannot be returned, for safety",
+    "turns": [
+      "I opened a box of nitrile gloves and they're the wrong size. Can I send them back for a different size?"
+    ]
+  },
+  {
+    "id": "q14-faulty-item",
+    "expect": "answered",
+    "correct": "Covered 12 months; replace or refund; Northaven pays return postage; photograph it",
+    "turns": [
+      "My digital thermometer arrived with a cracked display. What do I do?"
+    ]
+  },
+  {
+    "id": "q15-cert-general",
+    "expect": "answered",
+    "correct": "Yes, UKAS-traceable PDF, emailed within five working days of dispatch, not in the box",
+    "turns": [
+      "Does the pH meter come with a calibration certificate? How do I get it?"
+    ]
+  },
+  {
+    "id": "q16-cert-pending",
+    "expect": "answered",
+    "correct": "Pending: not issued yet, follows within five working days of dispatch",
+    "turns": [
+      "Has the calibration certificate for NI-2050 been sent yet? h.lindqvist@stalbans-sfc.example"
+    ]
+  },
+  {
+    "id": "q17-cert-issued",
+    "expect": "answered",
+    "correct": "Issued does not prove email delivery; reissue route from retrieved policy.",
+    "turns": [
+      "I can't find the calibration certificate for the balance on NI-2045. f.macrae@kelsovetlab.example"
+    ]
+  },
+  {
+    "id": "q18-recalibration-quote",
+    "expect": "case-created",
+    "correct": "Retrieves calibration policy; no invented quote; persists case with request context and confirms returned case number.",
+    "turns": [
+      "We need our precision balance recalibrated every year. How much does that cost?",
+      "Use f.macrae@kelsovetlab.example for the quote request."
+    ]
+  },
+  {
+    "id": "q19-wants-a-person",
+    "expect": "case-created",
+    "correct": "Explains asynchronous request, asks for contact if missing, creates real Case and returns number; no claim of live transfer.",
+    "turns": [
+      "This is the third time I've asked about this. I want to speak to a person now.",
+      "My email is p.raman@whitcombe-academy.example. Please save my request for a person to help."
+    ]
+  },
+  {
+    "id": "q20-off-topic",
+    "expect": "answered",
+    "correct": "Does not answer; says what it can help with",
+    "turns": [
+      "What's the capital of Peru?"
+    ]
+  }
+]

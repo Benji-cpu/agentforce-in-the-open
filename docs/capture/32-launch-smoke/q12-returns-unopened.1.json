@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "16a3f2c7-e167-4743-9b31-1f33aa5195e5",
+   "metrics": {},
+   "feedbackId": "87f17612-52a6-4643-abe4-10b5c569a902",
+   "planId": "87f17612-52a6-4643-abe4-10b5c569a902",
+   "isContentSafe": true,
+   "message": "I cannot check the return policy right now due to a technical issue. Would you like me to create a support request so someone can help you with your return?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "96c43724-c803-4c75-83f3-1a17bacd02db"
+}

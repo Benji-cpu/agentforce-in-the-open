@@ -1,0 +1,21 @@
+{
+  "required" : [ "orderReference", "customerEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "customerEmail" : {
+      "title" : "Customer Email",
+      "description" : "The email address the order was placed under",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "orderReference" : {
+      "title" : "Order Reference",
+      "description" : "The order reference from the confirmation email, e.g. NI-2041",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

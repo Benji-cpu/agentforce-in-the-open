@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "c8d2cfcc-9a7f-4751-8f3a-b71deed008e2",
+   "isContentSafe": true,
+   "message": "Annual recalibration prices for precision balances are quoted per instrument by a team member. I can save a support request for a quote. Please provide your reply email so the team can get in touch. If you know the make, model, or serial number, include those details, but they are optional. Would you like to go ahead?",
+   "id": "ebb16564-40c4-4214-9b73-0be37c4364ea",
+   "metrics": {},
+   "planId": "c8d2cfcc-9a7f-4751-8f3a-b71deed008e2",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0ace2-8963-72ed-ada3-751657f26ff9"
+}

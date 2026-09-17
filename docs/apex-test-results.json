@@ -1,0 +1,52 @@
+{
+  "namedTestMethods": 9,
+  "allPassed": true,
+  "reportedTestRunCoverage": "97%",
+  "tests": [
+    {
+      "class": "NorthavenOrderLookupTest",
+      "method": "asksForMissingInputs",
+      "outcome": "Pass"
+    },
+    {
+      "class": "NorthavenOrderLookupTest",
+      "method": "findsOrderWhenReferenceAndEmailMatch",
+      "outcome": "Pass"
+    },
+    {
+      "class": "NorthavenOrderLookupTest",
+      "method": "refusesUnknownReference",
+      "outcome": "Pass"
+    },
+    {
+      "class": "NorthavenOrderLookupTest",
+      "method": "refusesWhenEmailDoesNotMatch",
+      "outcome": "Pass"
+    },
+    {
+      "class": "NorthavenPolicyLookupTest",
+      "method": "missingOrUnknownPolicyIsExplicit",
+      "outcome": "Pass"
+    },
+    {
+      "class": "NorthavenPolicyLookupTest",
+      "method": "readsPublishedArticleNotDraft",
+      "outcome": "Pass"
+    },
+    {
+      "class": "NorthavenSupportRequestTest",
+      "method": "persistsContextInQueueAndReusesRetry",
+      "outcome": "Pass"
+    },
+    {
+      "class": "NorthavenSupportRequestTest",
+      "method": "rejectsMissingContactWithoutWriting",
+      "outcome": "Pass"
+    },
+    {
+      "class": "NorthavenSupportRequestTest",
+      "method": "unavailableQueueNeverClaimsSuccess",
+      "outcome": "Pass"
+    }
+  ]
+}

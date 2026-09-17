@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "21d93257-b2c1-4a91-93bb-1f14a7a05b31",
+   "isContentSafe": true,
+   "message": "Order NI-2044, placed 10/09/2026 for 1 refractometer 0-32 Brix and 6 hydrometers, is awaiting stock. The warehouse will email when it ships. If you need an estimated date or want to speak to a person, I can arrange that. Would you like me to hand this over for a personal update?",
+   "id": "d96d4e92-504b-4443-8419-0994a950c9ae",
+   "metrics": {},
+   "planId": "21d93257-b2c1-4a91-93bb-1f14a7a05b31",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa91-e840-7882-b6f8-46499c9d88d3"
+}

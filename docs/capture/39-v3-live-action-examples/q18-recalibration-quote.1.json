@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "bbb42b65-40aa-425e-bbea-cafd19c5469c",
+   "metrics": {},
+   "feedbackId": "2cf1dd5b-d504-4488-88bc-03cbf0927371",
+   "planId": "2cf1dd5b-d504-4488-88bc-03cbf0927371",
+   "isContentSafe": true,
+   "message": "We do not have a set price for annual recalibration. Each instrument needs a personalised quote. I can have the team contact you with a quote. Please provide your email address, and if possible, the make and model of your precision balance. If you do not know the details, that is fine—the team can ask later. Would you like to proceed?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "e5fdbc3f-1009-446e-a173-c515cf1bfcea"
+}

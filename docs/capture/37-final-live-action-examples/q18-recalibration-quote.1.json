@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "2a80e175-72e6-42a6-8886-c915fdaed2d6",
+   "metrics": {},
+   "feedbackId": "72caadc3-be25-4771-8ac9-a4ff3f804f53",
+   "planId": "72caadc3-be25-4771-8ac9-a4ff3f804f53",
+   "isContentSafe": true,
+   "message": "We do not have a fixed price for recalibrating a precision balance. Each quote depends on the instrument. I can save a support request so someone can provide an exact quote. Could you share your reply email and the balance model or serial number?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "eaa7e1e1-a107-4497-8e51-ad676d74f6f4"
+}

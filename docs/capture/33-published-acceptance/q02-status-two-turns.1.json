@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "a70b2bad-416b-4c40-9acb-72fca4c64e40",
+   "isContentSafe": true,
+   "message": "To check the status of order NI-2048, I need the email address used to place the order. Could you provide that, please?",
+   "id": "8a17bbae-39a2-4449-97c0-65a147575efb",
+   "metrics": {},
+   "planId": "a70b2bad-416b-4c40-9acb-72fca4c64e40",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa91-8f43-7380-8781-66fbeb9a25d0"
+}

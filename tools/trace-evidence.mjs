@@ -7,6 +7,7 @@ export function extractEvidence(trace) {
     reachedHumanNode: path.includes('__human__'),
     actions: steps.filter(s => s.type === 'FunctionStep').map(s => ({
       name: s.function?.name,
+      errors: s.function?.errors || [],
       input: s.function?.input,
       output: Object.fromEntries(Object.entries(s.function?.output || {}).filter(([k]) => !k.startsWith('__'))),
     })),

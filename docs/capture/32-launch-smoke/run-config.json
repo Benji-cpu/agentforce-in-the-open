@@ -1,0 +1,8 @@
+{
+  "bundle": "Northaven_Support",
+  "org": "agentforce-de",
+  "published": false,
+  "simulate": false,
+  "casesPath": "tests/launch-smoke.json",
+  "startedAt": "2026-09-16T14:10:08.412Z"
+}

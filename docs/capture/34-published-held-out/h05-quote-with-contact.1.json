@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "49e4d3bf-fdce-4f8f-96cc-2611125b5bef",
+   "isContentSafe": true,
+   "message": "Your support request for an annual pipette recalibration quote has been saved. The case number is 00001027. No email was sent. Is there anything else I can help with today?",
+   "id": "9d572842-dc92-4194-b008-815f73a0c279",
+   "metrics": {},
+   "planId": "49e4d3bf-fdce-4f8f-96cc-2611125b5bef",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa92-f7e9-7d09-8a7f-f488ff24aecf"
+}

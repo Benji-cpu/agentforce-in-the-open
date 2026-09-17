@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "823d189b-21a1-4202-8765-372f18a179e9",
+   "metrics": {},
+   "feedbackId": "f50f357f-b5a3-43af-a43d-da53ab7e1a70",
+   "planId": "f50f357f-b5a3-43af-a43d-da53ab7e1a70",
+   "isContentSafe": true,
+   "message": "According to the (fictional) Northaven policy, you may return unused beakers in unopened original packaging within 30 days of delivery for a refund of the goods. You would pay return postage unless the items are faulty or sent in error. To start a return, email returns@northaven-instruments.example with your order reference and reason. You will receive a returns number and label within one working day.\n\nWould you like help finding your order reference or any other support with your return?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "1f78f16b-8510-465f-86c9-3e1c719b3bfd"
+}

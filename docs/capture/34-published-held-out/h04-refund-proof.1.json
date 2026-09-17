@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "dcd7a245-5355-49c3-b2be-cd423ccb3b94",
+   "isContentSafe": true,
+   "message": "The record for order NI-2047 is cancelled. I cannot confirm a payment or refund from this lookup. Would you like me to raise a support request to have your refund checked?",
+   "id": "9c637a79-9785-4d52-a445-847a0d35525a",
+   "metrics": {},
+   "planId": "dcd7a245-5355-49c3-b2be-cd423ccb3b94",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa92-b6fc-7e59-a9c8-1aac2ac8c345"
+}

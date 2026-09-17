@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "22739d50-045b-454e-9d09-6b8118f34fa1",
+   "isContentSafe": true,
+   "message": "I can help with order status, delivery tracking, returns, calibration certificates, or connecting you to a person at Northaven Instruments. What would you like to do?",
+   "id": "aa83fd80-59d7-46a4-9d38-8ea626663790",
+   "metrics": {},
+   "planId": "22739d50-045b-454e-9d09-6b8118f34fa1",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa96-4e69-7e57-9ecd-a2a1b429b15a"
+}

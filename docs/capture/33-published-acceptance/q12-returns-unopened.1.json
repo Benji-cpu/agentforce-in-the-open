@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "76422df4-29d0-4235-8c3c-a37bbf94615d",
+   "isContentSafe": true,
+   "message": "I need to check our returns policy before I can answer. At the moment, I cannot access the policy details. Would you like me to open a support request so someone can confirm if your beakers can be returned?",
+   "id": "4eb612ba-ac25-4f25-8a02-5ed5f92137a4",
+   "metrics": {},
+   "planId": "76422df4-29d0-4235-8c3c-a37bbf94615d",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa94-32ef-7158-b20b-89950030207e"
+}

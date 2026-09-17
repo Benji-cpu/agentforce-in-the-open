@@ -192,6 +192,46 @@
       "at": "2026-09-16T02:10:37.657242+00:00",
       "session": "review",
       "shows": "Allowlisted evidence extracted from retained original local traces. Corrects 33/33 claim: 12+13+13 calls, with q02 missing in round one. Original transcripts unchanged."
+    },
+    {
+      "file": "32-launch-smoke",
+      "session": "completion",
+      "shows": "Local live-action smoke; Knowledge permission failure and first saved Case."
+    },
+    {
+      "file": "33-published-acceptance",
+      "session": "completion",
+      "shows": "Published v2: twenty development scenarios. Permission repaired during run; q12/q13 failed and q18 asked unnecessary details."
+    },
+    {
+      "file": "34-published-held-out",
+      "session": "completion",
+      "shows": "Published v2: five additional scenarios. h03 policy access failed before repair."
+    },
+    {
+      "file": "35-policy-probe",
+      "session": "completion",
+      "shows": "Local trace diagnosing missing AllowViewKnowledge permission."
+    },
+    {
+      "file": "36-published-policy-regression",
+      "session": "completion",
+      "shows": "Published v2: all three policy failures retested successfully after app permission grant."
+    },
+    {
+      "file": "37-final-live-action-examples",
+      "session": "completion",
+      "shows": "Three local live-action examples with exported execution evidence; support Case separately read back."
+    },
+    {
+      "file": "38-published-v3-regression",
+      "session": "completion",
+      "shows": "Published v3 targeted order, policy and support-request checks after optional-detail instruction fix."
+    },
+    {
+      "file": "39-v3-live-action-examples",
+      "session": "completion",
+      "shows": "Final source, local live-action traces for the three public replay examples. Case 00001032 independently read back."
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "agent": "Northaven_Support",
+  "version": 3,
+  "published": true,
+  "activated": true,
+  "executionMode": "Published agent API, live actions",
+  "data": "Synthetic only"
+}

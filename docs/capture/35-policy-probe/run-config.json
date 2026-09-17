@@ -1,0 +1,8 @@
+{
+  "bundle": "Northaven_Support",
+  "org": "agentforce-de",
+  "published": false,
+  "simulate": false,
+  "casesPath": ".sf-tmp/policy-probe.json",
+  "startedAt": "2026-09-16T14:16:45.921Z"
+}

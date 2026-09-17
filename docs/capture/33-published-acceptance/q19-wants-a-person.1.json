@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "6a1e55c7-2020-4f42-9e13-3e4da0a5fce4",
+   "isContentSafe": true,
+   "message": "There is no live human chat in this demo, but I can save a support request for a person to review. Please provide your email address so I can log your issue for follow-up.",
+   "id": "8d0e34b3-7fd7-4827-8270-88da002e7cd8",
+   "metrics": {},
+   "planId": "6a1e55c7-2020-4f42-9e13-3e4da0a5fce4",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa96-0069-78c0-93f5-a8dedab6952b"
+}

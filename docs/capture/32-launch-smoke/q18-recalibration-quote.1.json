@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "id": "bd7f1281-8d5f-4350-a9a2-e5b492387470",
+   "metrics": {},
+   "feedbackId": "cf271f25-7c49-4114-a356-f4553793ce1c",
+   "planId": "cf271f25-7c49-4114-a356-f4553793ce1c",
+   "isContentSafe": true,
+   "message": "I do not have the price for recalibration available right now. Would you like me to raise a support request so someone can get back to you with a quote?",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "4df2eef5-6ee7-440b-b03e-22ebbd8b08d8"
+}

@@ -1,3 +1,5 @@
+> Historical account. The [completed demonstration](https://benji-cpu.github.io/agentforce-in-the-open/) and [acceptance report](ACCEPTANCE.md) record the later implementation.
+
 # Did the support agent actually do the work?
 
 A customer asks where an order is. The agent replies, “I am checking the status of your order.”

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "q01-status-both-given",
+    "expect": "answered",
+    "correct": "Dispatched, DPD, tracking 15501234567890, expected 16 Sep 2026",
+    "turns": [
+      "Hi, where is my order NI-2041? My email is p.raman@whitcombe-academy.example"
+    ]
+  },
+  {
+    "id": "q12-returns-unopened",
+    "expect": "answered",
+    "correct": "Yes within 30 days of delivery, customer pays postage, email returns@ with reference and reason",
+    "turns": [
+      "Can I return some beakers I ordered three weeks ago? They're still in the box, unopened."
+    ]
+  },
+  {
+    "id": "q18-recalibration-quote",
+    "expect": "case-created",
+    "correct": "Retrieves calibration policy; no invented quote; persists case with request context and confirms returned case number.",
+    "turns": [
+      "We need our precision balance recalibrated every year. How much does that cost?",
+      "Use f.macrae@kelsovetlab.example for the quote request."
+    ]
+  }
+]

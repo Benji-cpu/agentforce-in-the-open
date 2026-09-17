@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "74de1b7c-a33c-4142-b3e2-f0f64486a8e5",
+   "isContentSafe": true,
+   "message": "I could not find an order with the reference NI-9999 under that email address. Please check both against your confirmation email. Would you like to try again or have a person look into this for you?",
+   "id": "7747e858-b076-4611-8e29-2b841a4bf88c",
+   "metrics": {},
+   "planId": "74de1b7c-a33c-4142-b3e2-f0f64486a8e5",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa92-e5ab-7c5f-8397-e893cc151166"
+}

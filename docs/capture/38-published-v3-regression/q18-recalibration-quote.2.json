@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "81c66bac-bab1-4815-8770-353603f33128",
+   "isContentSafe": true,
+   "message": "Your quote request for annual recalibration of a precision balance has been saved with case number 00001031. No make, model, or serial number was supplied, but the team can ask for those later if needed. No email was sent. Is there anything else I can help with?",
+   "id": "a34b99a4-c572-4a1b-94aa-6c7847bc4cf0",
+   "metrics": {},
+   "planId": "81c66bac-bab1-4815-8770-353603f33128",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0ace2-8963-72ed-ada3-751657f26ff9"
+}

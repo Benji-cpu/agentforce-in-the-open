@@ -1,0 +1,51 @@
+[
+  {
+    "caseNumber": "00001030",
+    "queue": "Northaven Support \u2014 Demo",
+    "description": "Synthetic Agentforce demonstration.\n\nCustomer context:\nCustomer requests a quote for annual recalibration of a precision balance. Please provide pricing details. No balance model or serial number was supplied yet.",
+    "status": "New",
+    "replyEmail": "f.macrae@kelsovetlab.example"
+  },
+  {
+    "caseNumber": "00001029",
+    "queue": "Northaven Support \u2014 Demo",
+    "description": "Synthetic Agentforce demonstration.\n\nCustomer context:\nCustomer has asked multiple times for help and now requests a person to assist. Please review and follow up.",
+    "status": "New",
+    "replyEmail": "p.raman@whitcombe-academy.example"
+  },
+  {
+    "caseNumber": "00001026",
+    "queue": "Northaven Support \u2014 Demo",
+    "description": "Synthetic Agentforce demonstration.\n\nCustomer context:\nCustomer needs a quote for annual recalibration of a precision balance.",
+    "status": "New",
+    "replyEmail": "f.macrae@kelsovetlab.example"
+  },
+  {
+    "caseNumber": "00001027",
+    "queue": "Northaven Support \u2014 Demo",
+    "description": "Synthetic Agentforce demonstration.\n\nCustomer context:\nRequest for an annual pipette recalibration quote.",
+    "status": "New",
+    "replyEmail": "t.ashworth@whitcombe-academy.example"
+  },
+  {
+    "caseNumber": "00001028",
+    "queue": "Northaven Support \u2014 Demo",
+    "description": "Synthetic Agentforce demonstration.\n\nCustomer context:\nOrder NI-2046 for 40 safety goggles and 10 boxes of nitrile gloves M, shipped Royal Mail, tracking RM1122334455GB, was due 15/09/2026 but has not arrived. Customer requests follow-up with the carrier.",
+    "status": "New",
+    "replyEmail": "abello@hartfield.example"
+  },
+  {
+    "caseNumber": "00001032",
+    "queue": "Northaven Support \u2014 Demo",
+    "description": "Synthetic Agentforce demonstration.\n\nCustomer context:\nCustomer requests a quote for annual recalibration of a precision balance. Make, model, and serial number not provided; team may need to ask for these details.",
+    "status": "New",
+    "replyEmail": "f.macrae@kelsovetlab.example"
+  },
+  {
+    "caseNumber": "00001031",
+    "queue": "Northaven Support \u2014 Demo",
+    "description": "Synthetic Agentforce demonstration.\n\nCustomer context:\nQuote request for annual recalibration of a precision balance. Make, model, and serial number not supplied.",
+    "status": "New",
+    "replyEmail": "f.macrae@kelsovetlab.example"
+  }
+]

@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "45d27f52-a3c6-4cdd-b2da-49088950b01c",
+   "isContentSafe": true,
+   "message": "Could you please provide the make, model, and serial number of your precision balance? I need these details to request a calibration quote for you.",
+   "id": "e312d845-2a30-428e-85d4-46917e45ea9a",
+   "metrics": {},
+   "planId": "45d27f52-a3c6-4cdd-b2da-49088950b01c",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa95-ab31-7fc3-9bd3-39e3e3041dfc"
+}

@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "448bf52c-3bff-4d25-8366-b87d1184d0a8",
+   "isContentSafe": true,
+   "message": "Your order NI-2046 was sent by Royal Mail with tracking number RM1122334455GB. The estimated delivery was 15/09/2026, so it is now late.\n\nPlease enter that tracking number on the Royal Mail tracking page for the latest update. If you have already done this and there is no sign of your parcel, I can hand this to a person to chase the carrier for you. Would you like me to do that?",
+   "id": "c8f7af6d-0fd4-4bb6-a7a4-e7dff92b3276",
+   "metrics": {},
+   "planId": "448bf52c-3bff-4d25-8366-b87d1184d0a8",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa93-d905-7367-9793-eb7d74473cdc"
+}

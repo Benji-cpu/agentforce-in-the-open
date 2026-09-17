@@ -1,0 +1,17 @@
+{
+ "messages": [
+  {
+   "type": "Inform",
+   "feedbackId": "0e3d98a5-0d94-40e0-a7dd-341e58c2dc33",
+   "isContentSafe": true,
+   "message": "Your support request is saved for review—case number 00001029. This is not a live chat and no email was sent, but your issue will be looked at. Is there anything else I can do for you today?",
+   "id": "7cf08c63-24ed-4e43-99ee-a69aa2189d0f",
+   "metrics": {},
+   "planId": "0e3d98a5-0d94-40e0-a7dd-341e58c2dc33",
+   "result": [],
+   "citedReferences": []
+  }
+ ],
+ "agentApiName": "Northaven_Support",
+ "sessionId": "01a0aa96-0069-78c0-93f5-a8dedab6952b"
+}

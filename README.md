@@ -7,31 +7,29 @@ This repository is my first Agentforce prototype, built in a Salesforce Develope
 **Northaven Instruments is fictional. Every customer, order and policy is synthetic.** I have
 Salesforce architecture experience; this project is not evidence of a production Agentforce rollout.
 
-Start with [what the agent actually did](docs/what-the-agent-actually-did.md): a short account of a
-permission failure, how I diagnosed it and what still needs testing. The code and captured evidence
-are here for anyone who wants to inspect the work.
+**[Explore the finished demonstration](https://benji-cpu.github.io/agentforce-in-the-open/)** — recorded conversations with the action evidence beside each reply.
 
-## Current evidence — reviewed 16 September 2026
+## Current implementation — 17 September 2026
 
-- Order lookup: live Apex action against synthetic records; four Apex tests pass after the review
-  fix. Email/reference matching is a demo gate, **not customer authentication**.
-- Original measured rounds: 15 / 2 / 3, then 17 / 2 / 1 twice, where the categories were acceptable
-  reply / preview escalation / failed case. The same 20 questions were reused while tuning.
-- Published v1 was inactive when the original measurement was made. Those runs used the local
-  authoring bundle with live actions, not an activated deployment or a customer-facing channel.
-- A preview escalation event does **not** prove a human received anything. Its recorded targets
-  were empty. Queue receipt, context transfer and unavailable-human behaviour remain unverified.
-- Policies are in instructions. Salesforce Knowledge is not enabled; article retrieval is unfinished.
-- No customer outcomes, deflection rate, production reliability or cost saving have been measured.
+Northaven Support v3 is published and activated in the synthetic Developer Edition org. Three
+Apex actions look up orders, retrieve published Salesforce Knowledge articles and save support
+requests to a Case queue. The public page is a recorded replay, not a live customer channel.
 
-The review results are in [the evidence audit](docs/review-2026-09-16.md). The original
-[build log source](docs/build-log.html) retains the session history. Its older hosted Claude
-artifact may lag this repository; use the files here for the corrected account.
+- Nine named Apex test methods passed. The test run reported 97% coverage.
+- Twenty development scenarios and five additional held-out scenarios were exercised against
+  the published agent. Failures and targeted reruns are preserved in [the acceptance report](docs/ACCEPTANCE.md).
+- Support receipt is checked by reading saved Cases, including their owner and context.
+  This proves persistence in a queue, not human attention, live transfer or email delivery.
+- Public examples use authoring-bundle traces with live actions. Published-version responses
+  were tested separately; this CLI returned empty traces for those sessions.
+- Email/reference matching is a demo gate, **not authentication**. No customer outcomes,
+  production reliability, deflection rate or financial return have been measured.
 
-Latest review regression: **14 complete replies, three partial replies and three preview
-escalation events**. All intended escalation cases executed in this run; omitted answer details
-remain. [Case-by-case results](docs/capture/31-review-round-4/SCORE.md). The revised bundle has not
-replaced published v1.
+[Architecture](docs/implementation.md) · [Operator handover](docs/HANDOVER.md) ·
+[Acceptance evidence](docs/ACCEPTANCE.md) · [Original failure](docs/what-the-agent-actually-did.md)
+
+The original [build log](docs/build-log.html) and [review](docs/review-2026-09-16.md) remain as dated
+history. This page supersedes the old hosted Claude artifact for current status.
 
 ## Correction to the original measurement
 
@@ -182,7 +180,7 @@ sf                                three lines that run the CLI on node@22
 sfdx-project.json                 the repo root IS the SFDX project
 specs/northaven-agent-spec.yaml   what the agent is for, and its four topics
 force-app/…/aiAuthoringBundles/   the Agent Script blueprint — the thing to read
-force-app/…/classes/              NorthavenOrderLookup, the one action, and its test
+force-app/…/classes/              order lookup, Knowledge retrieval, support request + tests
 force-app/…/objects/Order/fields/ seven custom fields the lookup reads
 force-app/…/permissionsets/       what the agent user may touch; what a data loader needs
 force-app/…/bots/, genAiPlannerBundles/   what `sf agent publish` compiled the blueprint into

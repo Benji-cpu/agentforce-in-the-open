@@ -1,0 +1,8 @@
+{
+  "bundle": "Northaven_Support",
+  "org": "agentforce-de",
+  "published": true,
+  "simulate": false,
+  "casesPath": "tests/launch-questions.json",
+  "startedAt": "2026-09-16T14:13:58.459Z"
+}
